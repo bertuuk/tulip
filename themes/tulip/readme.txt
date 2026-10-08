@@ -21,6 +21,7 @@ Patterns for product pages: hero with image, highlight strip, heading and text, 
 
 = 0.2.0 =
 * Section patterns and a landing page pattern.
+* Pricing with plan cards (recommended plan, check list, badge).
 * Block styles: Eyebrow (paragraph), Card and Card dark (group, column), Inline (list), Accent section.
 * Type scale for marketing pages (up to 88 px, body 18 px) and button radius token.
 

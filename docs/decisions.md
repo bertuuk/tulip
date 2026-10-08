@@ -58,9 +58,20 @@ Combinacions que **no** passen AA i que cal evitar als patrons: `primary` sobre 
 
 **Desenvolupament:** `WP_DEVELOPMENT_MODE=theme` a wp-env perquè els patrons nous apareguin sense memòria cau.
 
+## 2026-10-08 · Preus amb targetes de pla
+
+**Patró `tulip/pricing-plans`**, a partir del PlanCard de Tuk DS en mode *action* (sense ràdio ni selecció). Etiqueta, nom, preu i període, descripció, característiques amb check, botó a tota l'amplada i nota. El pla del mig va marcat com a recomanat. El patró de preus bàsic es manté.
+
+**Peces noves:** estil *Card recommended* (fons brand-subtle, vora primary de 2 px), estil de paràgraf *Badge* (pastilla, se situa sobre la vora superior de la targeta recomanada) i estil de llista *Checks* (icona decorativa amb màscara CSS; el lector de pantalla només llegeix el text).
+
+**Diferència amb Tuk DS:** al PlanCard la pastilla és `aria-hidden`; aquí es llegeix, perquè a la web "Recomanat" és informació útil.
+
+**Targetes:** el darrer bloc de qualsevol targeta (card, card-dark, card-recommended) baixa al fons, així els botons queden alineats entre targetes. Resolt també al patró de preus bàsic.
+
+**Selector mensual/anual (PlanSelector):** no es fa ara. Si cal, serà el primer bloc del plugin `tulip-blocks`.
+
 ## Pendent
 
-- Que els botons de les targetes de preus quedin alineats a baix quan el contingut és desigual.
 - Mode "només contingut" per als ajudants (bloquejar l'estructura dels patrons).
 
 - Dark mode: theme.json no el suporta de manera nativa. No decidit.

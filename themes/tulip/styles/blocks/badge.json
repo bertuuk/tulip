@@ -1,0 +1,29 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"title": "Badge",
+	"slug": "badge",
+	"blockTypes": [ "core/paragraph" ],
+	"styles": {
+		"color": {
+			"background": "var:preset|color|primary",
+			"text": "var:preset|color|base"
+		},
+		"border": {
+			"radius": "var(--wp--custom--radius--full)"
+		},
+		"spacing": {
+			"padding": {
+				"top": "0.1875rem",
+				"right": "0.75rem",
+				"bottom": "0.1875rem",
+				"left": "0.75rem"
+			}
+		},
+		"typography": {
+			"fontSize": "var:preset|font-size|x-small",
+			"fontWeight": "600",
+			"lineHeight": "var(--wp--custom--line-height--tight)"
+		}
+	}
+}

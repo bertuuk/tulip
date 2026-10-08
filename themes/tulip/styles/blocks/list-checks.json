@@ -1,0 +1,12 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"title": "Checks",
+	"slug": "checks",
+	"blockTypes": [ "core/list" ],
+	"styles": {
+		"spacing": {
+			"padding": { "left": "0" }
+		}
+	}
+}
