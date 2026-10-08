@@ -1,0 +1,62 @@
+/**
+ * Tulip base styles.
+ *
+ * Only what theme.json cannot express. Colours, type, spacing and radii
+ * belong in theme.json, never here.
+ */
+
+/* Focus ------------------------------------------------------------------ */
+
+:root {
+	--tulip-focus-color: var(--wp--preset--color--primary);
+}
+
+/* Dark sections: a light focus ring (3:1 against the background) and
+   outline buttons in the section's text colour. */
+.is-style-section-dark {
+	--tulip-focus-color: var(--wp--preset--color--primary-light);
+	--tulip-button-outline-color: var(--wp--preset--color--base);
+}
+
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible,
+:where(.wp-element-button, .wp-block-button__link):focus-visible {
+	outline: var(--wp--custom--focus--width) solid var(--tulip-focus-color);
+	outline-offset: var(--wp--custom--focus--offset);
+}
+
+/* Sections --------------------------------------------------------------- */
+
+/* Consecutive full-width sections sit flush, with no blockGap strip between them. */
+:where(.wp-block-post-content, main) > .alignfull + .alignfull {
+	margin-block-start: 0;
+}
+
+/* Links ------------------------------------------------------------------ */
+
+a {
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.15em;
+}
+
+a:hover {
+	text-decoration-thickness: 2px;
+}
+
+/* Smooth colour change on hover; disabled by the reduced-motion rule below. */
+.wp-element-button,
+.wp-block-button__link {
+	transition: background-color var(--wp--custom--duration--normal) ease, color var(--wp--custom--duration--normal) ease;
+}
+
+/* Motion ----------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		scroll-behavior: auto !important;
+		transition-duration: 0.01ms !important;
+	}
+}

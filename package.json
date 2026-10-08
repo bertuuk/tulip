@@ -1,0 +1,22 @@
+{
+  "name": "tulip",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Development environment for the Tulip block theme (and its future companion plugin).",
+  "license": "GPL-2.0-or-later",
+  "author": "Berta Nicolau <hola@bertanicolau.com>",
+  "scripts": {
+    "start": "wp-env start",
+    "stop": "wp-env stop",
+    "reset": "wp-env clean all",
+    "destroy": "wp-env destroy",
+    "wp": "wp-env run cli wp",
+    "logs": "wp-env logs"
+  },
+  "devDependencies": {
+    "@wordpress/env": "^11.17.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
