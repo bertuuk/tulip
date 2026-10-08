@@ -16,6 +16,22 @@ npm stop
 
 Altres ordres: `npm run wp -- <ordre>` (WP-CLI), `npm run logs`, `npm run reset` (esborra el contingut i torna a començar), `npm run destroy`.
 
+## Plugins locals
+
+Per provar Tulip amb plugins que es desenvolupen en una altra carpeta, sense copiar-los, es fa servir `.wp-env.override.json` (no va al git, perquè les rutes són de cada ordinador). La seva llista `plugins` substitueix la de `.wp-env.json`, així que hi ha de repetir els plugins d'eina:
+
+```json
+{
+  "plugins": [
+    "https://downloads.wordpress.org/plugin/create-block-theme.latest-stable.zip",
+    "https://downloads.wordpress.org/plugin/theme-check.latest-stable.zip",
+    "/ruta/absoluta/al/plugin"
+  ]
+}
+```
+
+Els canvis fets al plugin es veuen al moment. Si el plugin compila blocs, ha de tenir la carpeta `build/`.
+
 ## Estructura
 
 ```
