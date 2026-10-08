@@ -70,6 +70,16 @@ Combinacions que **no** passen AA i que cal evitar als patrons: `primary` sobre 
 
 **Selector mensual/anual (PlanSelector):** no es fa ara. Si cal, serà el primer bloc del plugin `tulip-blocks`.
 
+## 2026-10-08 · Capçalera
+
+**La capçalera per defecte és un patró** (`tulip/header`), igual que el peu, perquè el text del botó sigui traduïble. Logo + nom, menú i un botó, amb una línia fina a sota.
+
+**Menú:** la pàgina actual es marca subratllada (no només amb color). El menú mòbil s'obre alineat a l'esquerra, amb lletra gran i espai entre elements perquè siguin fàcils de tocar.
+
+**Mòbil (< 600 px):** el botó principal es manté i va abans de la icona de menú; els botons marcats amb `tulip-hide-on-mobile` (el "Log in" de la capçalera fosca) s'amaguen, així que aquest enllaç ha d'existir també dins del menú.
+
+**No és fixa (sticky)** a propòsit: amb zoom alt o pantalles baixes una capçalera fixa tapa contingut (WCAG 1.4.10). Si un projecte la vol, es decidirà amb una condició d'alçada de pantalla.
+
 ## Pendent
 
 - Mode "només contingut" per als ajudants (bloquejar l'estructura dels patrons).

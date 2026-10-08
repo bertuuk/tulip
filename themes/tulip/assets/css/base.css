@@ -31,6 +31,65 @@
 	outline-offset: var(--wp--custom--focus--offset);
 }
 
+/* Header ------------------------------------------------------------------ */
+
+/* Header buttons are smaller than page buttons. */
+.tulip-header-actions .wp-block-button__link {
+	padding: 0.625rem 1.125rem;
+}
+
+.tulip-header-actions .is-style-outline .wp-block-button__link {
+	padding: calc(0.625rem - 2px) calc(1.125rem - 2px);
+}
+
+/* The page you are on is marked in the menu, not only by colour. */
+.wp-block-navigation .wp-block-navigation-item__content[aria-current="page"] {
+	text-decoration: underline;
+	text-decoration-thickness: 2px;
+	text-underline-offset: 0.35em;
+}
+
+/* Mobile menu: left-aligned, larger targets once the overlay is open. */
+.wp-block-navigation__responsive-container.is-menu-open,
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container,
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item {
+	--navigation-layout-justification-setting: flex-start;
+	--navigation-layout-justify: flex-start;
+}
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item {
+	font-size: var(--wp--preset--font-size--x-large);
+	font-weight: 600;
+}
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container {
+	gap: var(--wp--preset--spacing--30);
+}
+
+.wp-block-navigation .wp-block-navigation__responsive-container.is-menu-open {
+	padding: var(--wp--preset--spacing--30);
+}
+
+.tulip-header-actions .wp-block-button__link {
+	white-space: nowrap;
+}
+
+@media (max-width: 599px) {
+	.tulip-hide-on-mobile {
+		display: none !important;
+	}
+
+	/* Button first, menu button last, at the edge where thumbs expect it. */
+	.wp-block-group:has(> .tulip-header-actions) > .wp-block-navigation {
+		order: 2;
+	}
+
+	/* Keep the site name from pushing the menu button off screen. */
+	.wp-block-site-title {
+		font-size: var(--wp--preset--font-size--medium);
+	}
+}
+
 /* Sections --------------------------------------------------------------- */
 
 /* Header, main and footer touch: sections bring their own padding. */
