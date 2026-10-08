@@ -475,6 +475,73 @@ p.is-style-badge {
 	text-decoration: underline;
 }
 
+/* Stacked rows with a divider: the divider is the only separation. */
+.is-style-divided + .is-style-divided {
+	margin-block-start: 0;
+}
+
+/* Grids: once items stack on small screens, rows need more air than
+   columns did side by side. */
+@media (max-width: 781px) {
+	.wp-block-group.is-layout-grid:not(.tulip-logo-grid),
+	.wp-block-post-template.is-layout-grid {
+		row-gap: var(--wp--preset--spacing--50);
+	}
+}
+
+/* Post cards: image, date, title and link spaced evenly. */
+.wp-block-post-template > li {
+	display: flex;
+	flex-direction: column;
+	gap: var(--wp--preset--spacing--10);
+}
+
+.wp-block-post-template > li > * {
+	margin: 0;
+}
+
+.wp-block-post-template > li > .wp-block-post-featured-image {
+	margin-bottom: var(--wp--preset--spacing--10);
+}
+
+.wp-block-read-more {
+	align-self: flex-start;
+	color: inherit;
+	font-weight: 600;
+	text-decoration: underline;
+	text-decoration-thickness: 1.5px;
+	text-underline-offset: 5px;
+}
+
+/* Accordion (FAQ): a divider per question, full-width toggle with the icon
+   at the end. */
+.wp-block-accordion-item {
+	border-bottom: var(--wp--custom--border-width--default) solid color-mix(in srgb, currentColor 20%, transparent);
+}
+
+.wp-block-accordion-item + .wp-block-accordion-item {
+	margin-block-start: 0;
+}
+
+.wp-block-accordion-heading {
+	margin: 0;
+}
+
+.wp-block-accordion-heading__toggle {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+	gap: var(--wp--preset--spacing--20);
+	padding: var(--wp--preset--spacing--20) 0;
+	text-align: left;
+}
+
+.wp-block-accordion-panel {
+	padding-bottom: var(--wp--preset--spacing--20);
+	color: var(--tulip-muted);
+}
+
 /* Links ------------------------------------------------------------------ */
 
 a {

@@ -30,8 +30,8 @@
 <!-- wp:column {"width":"55%"} -->
 <div class="wp-block-column" style="flex-basis:55%">
 
-<!-- wp:group {"style":{"border":{"bottom":{"color":"var:preset|color|border","width":"1px"}},"spacing":{"padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30"}}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
-<div class="wp-block-group" style="border-bottom-color:var(--wp--preset--color--border);border-bottom-width:1px;padding-top:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30)"><!-- wp:paragraph {"className":"is-style-eyebrow","textColor":"primary"} -->
+<!-- wp:group {"className":"is-style-divided","style":{"spacing":{"padding":{"top":"var:preset|spacing|30"}}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
+<div class="wp-block-group is-style-divided" style="padding-top:var(--wp--preset--spacing--30)"><!-- wp:paragraph {"className":"is-style-eyebrow","textColor":"primary"} -->
 <p class="is-style-eyebrow has-primary-color has-text-color">01</p>
 <!-- /wp:paragraph -->
 
@@ -46,8 +46,8 @@
 <!-- /wp:group --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"style":{"border":{"bottom":{"color":"var:preset|color|border","width":"1px"}},"spacing":{"padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30"}}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
-<div class="wp-block-group" style="border-bottom-color:var(--wp--preset--color--border);border-bottom-width:1px;padding-top:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30)"><!-- wp:paragraph {"className":"is-style-eyebrow","textColor":"primary"} -->
+<!-- wp:group {"className":"is-style-divided","style":{"spacing":{"padding":{"top":"var:preset|spacing|30"}}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
+<div class="wp-block-group is-style-divided" style="padding-top:var(--wp--preset--spacing--30)"><!-- wp:paragraph {"className":"is-style-eyebrow","textColor":"primary"} -->
 <p class="is-style-eyebrow has-primary-color has-text-color">02</p>
 <!-- /wp:paragraph -->
 
@@ -62,8 +62,8 @@
 <!-- /wp:group --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"style":{"border":{"bottom":{"color":"var:preset|color|border","width":"1px"}},"spacing":{"padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30"}}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
-<div class="wp-block-group" style="border-bottom-color:var(--wp--preset--color--border);border-bottom-width:1px;padding-top:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30)"><!-- wp:paragraph {"className":"is-style-eyebrow","textColor":"primary"} -->
+<!-- wp:group {"className":"is-style-divided","style":{"spacing":{"padding":{"top":"var:preset|spacing|30"}}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
+<div class="wp-block-group is-style-divided" style="padding-top:var(--wp--preset--spacing--30)"><!-- wp:paragraph {"className":"is-style-eyebrow","textColor":"primary"} -->
 <p class="is-style-eyebrow has-primary-color has-text-color">03</p>
 <!-- /wp:paragraph -->
 
@@ -78,8 +78,8 @@
 <!-- /wp:group --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"style":{"border":{"bottom":{"color":"var:preset|color|border","width":"1px"}},"spacing":{"padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30"}}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
-<div class="wp-block-group" style="border-bottom-color:var(--wp--preset--color--border);border-bottom-width:1px;padding-top:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30)"><!-- wp:paragraph {"className":"is-style-eyebrow","textColor":"primary"} -->
+<!-- wp:group {"className":"is-style-divided","style":{"spacing":{"padding":{"top":"var:preset|spacing|30"}}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
+<div class="wp-block-group is-style-divided" style="padding-top:var(--wp--preset--spacing--30)"><!-- wp:paragraph {"className":"is-style-eyebrow","textColor":"primary"} -->
 <p class="is-style-eyebrow has-primary-color has-text-color">04</p>
 <!-- /wp:paragraph -->
 

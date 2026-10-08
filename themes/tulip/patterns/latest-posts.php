@@ -33,7 +33,7 @@
 <!-- /wp:columns -->
 
 <!-- wp:query {"queryId":11,"query":{"perPage":3,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","inherit":false},"align":"wide"} -->
-<div class="wp-block-query alignwide"><!-- wp:post-template {"layout":{"type":"grid","columnCount":3,"minimumColumnWidth":"16rem"}} -->
+<div class="wp-block-query alignwide"><!-- wp:post-template {"style":{"spacing":{"blockGap":"var:preset|spacing|40"}},"layout":{"type":"grid","columnCount":3,"minimumColumnWidth":"16rem"}} -->
 <!-- wp:post-featured-image {"aspectRatio":"3/2","className":"is-style-framed"} /-->
 
 <!-- wp:post-date {"format":"j M Y","className":"is-style-eyebrow"} /-->

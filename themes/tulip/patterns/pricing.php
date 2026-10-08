@@ -42,13 +42,15 @@
 <p class="has-small-font-size"><?php echo esc_html_x( 'To try it out or for small projects.', 'pricing plan description', 'tulip' ); ?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"fontSize":"xx-large","style":{"typography":{"fontWeight":"700","lineHeight":"1"}}} -->
+<!-- wp:group {"style":{"spacing":{"blockGap":"0.375rem"}},"layout":{"type":"flex","flexWrap":"wrap","verticalAlignment":"bottom"}} -->
+<div class="wp-block-group"><!-- wp:paragraph {"fontSize":"xx-large","style":{"typography":{"fontWeight":"700","lineHeight":"1"}}} -->
 <p class="has-xx-large-font-size" style="font-weight:700;line-height:1"><?php echo esc_html_x( '0 €', 'pricing plan price', 'tulip' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"fontSize":"small"} -->
 <p class="has-small-font-size"><?php echo esc_html_x( 'forever', 'pricing plan billing period', 'tulip' ); ?></p>
-<!-- /wp:paragraph -->
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
 
 <!-- wp:list {"fontSize":"small"} -->
 <ul class="wp-block-list has-small-font-size"><!-- wp:list-item -->
@@ -80,13 +82,15 @@
 <p class="has-small-font-size"><?php echo esc_html_x( 'For regular use.', 'pricing plan description', 'tulip' ); ?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"fontSize":"xx-large","style":{"typography":{"fontWeight":"700","lineHeight":"1"}}} -->
+<!-- wp:group {"style":{"spacing":{"blockGap":"0.375rem"}},"layout":{"type":"flex","flexWrap":"wrap","verticalAlignment":"bottom"}} -->
+<div class="wp-block-group"><!-- wp:paragraph {"fontSize":"xx-large","style":{"typography":{"fontWeight":"700","lineHeight":"1"}}} -->
 <p class="has-xx-large-font-size" style="font-weight:700;line-height:1"><?php echo esc_html_x( '29 €', 'pricing plan price', 'tulip' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"fontSize":"small"} -->
 <p class="has-small-font-size"><?php echo esc_html_x( 'per month', 'pricing plan billing period', 'tulip' ); ?></p>
-<!-- /wp:paragraph -->
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
 
 <!-- wp:list {"fontSize":"small"} -->
 <ul class="wp-block-list has-small-font-size"><!-- wp:list-item -->
@@ -118,13 +122,15 @@
 <p class="has-small-font-size"><?php echo esc_html_x( 'For teams who use it every week.', 'pricing plan description', 'tulip' ); ?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"fontSize":"xx-large","style":{"typography":{"fontWeight":"700","lineHeight":"1"}}} -->
+<!-- wp:group {"style":{"spacing":{"blockGap":"0.375rem"}},"layout":{"type":"flex","flexWrap":"wrap","verticalAlignment":"bottom"}} -->
+<div class="wp-block-group"><!-- wp:paragraph {"fontSize":"xx-large","style":{"typography":{"fontWeight":"700","lineHeight":"1"}}} -->
 <p class="has-xx-large-font-size" style="font-weight:700;line-height:1"><?php echo esc_html_x( '79 €', 'pricing plan price', 'tulip' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"fontSize":"small"} -->
 <p class="has-small-font-size"><?php echo esc_html_x( 'per month', 'pricing plan billing period', 'tulip' ); ?></p>
-<!-- /wp:paragraph -->
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
 
 <!-- wp:list {"fontSize":"small"} -->
 <ul class="wp-block-list has-small-font-size"><!-- wp:list-item -->

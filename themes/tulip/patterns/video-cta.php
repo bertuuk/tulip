@@ -5,7 +5,7 @@
  * Categories: tulip, videos, call-to-action
  * Keywords: video, demo, cta, accent
  * Viewport Width: 1440
- * Description: A video next to a heading, short text and a button, on the accent colour.
+ * Description: A video next to a heading, short text and a button, on the accent colour. Replace the placeholder image with a Video or an Embed (YouTube, Vimeo) block.
  *
  * @package Tulip
  */
@@ -14,9 +14,9 @@
 <!-- wp:group {"metadata":{"name":"Video with call to action"},"align":"full","className":"is-style-section-accent","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull is-style-section-accent" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70)"><!-- wp:columns {"verticalAlignment":"center","align":"wide","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|70"}}}} -->
 <div class="wp-block-columns alignwide are-vertically-aligned-center"><!-- wp:column {"verticalAlignment":"center","width":"50%"} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:50%"><!-- wp:video -->
-<figure class="wp-block-video"></figure>
-<!-- /wp:video --></div>
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:50%"><!-- wp:image {"aspectRatio":"16/9","scale":"cover","sizeSlug":"large","className":"is-style-framed"} -->
+<figure class="wp-block-image size-large is-style-framed"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/placeholder-landscape.svg' ) ); ?>" alt="" style="aspect-ratio:16/9;object-fit:cover"/></figure>
+<!-- /wp:image --></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"center","width":"50%"} -->
