@@ -3,7 +3,7 @@ Contributors: bertanicolau
 Requires at least: 6.6
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 0.2.0
+Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -15,9 +15,17 @@ Tulip takes its design tokens (colour, type, spacing, radius, shadow) from the T
 
 Section styles (Alternative, Brand subtle, Brand dark, Accent) recolour a whole group, including its links, buttons and focus ring, in one click.
 
-Patterns for product pages: hero with image, highlight strip, heading and text, text and image, numbered features, video with call to action, pricing, FAQ (accordion), closing call to action, dark header and footer, and a full landing page that combines them.
+Templates for the blog (index, archives, single post) and patterns for product pages: hero with image, highlight strip, heading and text, text and image, numbered features, video with call to action, pricing, FAQ (accordion), closing call to action, dark header and footer, and a full landing page that combines them.
 
 == Changelog ==
+
+= 1.0.0 =
+* First stable version.
+* Blog: index with category filter and featured latest post, archive, single post with reading column, author box and related posts; "Post without author" template.
+* Page headers (minimal, with image, dark, legal), image and text sections, note box for articles.
+* Sections from the landing design: feature grids, figures, testimonials, steps, tabs, plan comparison, announcement bar, latest posts, logos, team.
+* Optional integration with Marketing Blocks (email form styles and patterns).
+* "Tulip" pattern category; full-width sections touch header and footer.
 
 = 0.2.0 =
 * Section patterns and a landing page pattern.
