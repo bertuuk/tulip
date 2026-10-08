@@ -1,0 +1,24 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"title": "Divided",
+	"slug": "divided",
+	"blockTypes": [
+		"core/group",
+		"core/column"
+	],
+	"styles": {
+		"border": {
+			"bottom": {
+				"color": "color-mix(in srgb, currentColor 20%, transparent)",
+				"style": "solid",
+				"width": "var(--wp--custom--border-width--default)"
+			}
+		},
+		"spacing": {
+			"padding": {
+				"bottom": "var:preset|spacing|30"
+			}
+		}
+	}
+}

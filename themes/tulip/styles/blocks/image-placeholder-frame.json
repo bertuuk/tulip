@@ -1,0 +1,15 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"title": "Framed",
+	"slug": "framed",
+	"blockTypes": [
+		"core/image",
+		"core/post-featured-image"
+	],
+	"styles": {
+		"border": {
+			"radius": "var(--wp--custom--radius--card)"
+		}
+	}
+}

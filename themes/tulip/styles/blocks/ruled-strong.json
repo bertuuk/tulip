@@ -1,0 +1,24 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"title": "Ruled strong",
+	"slug": "ruled-strong",
+	"blockTypes": [
+		"core/group",
+		"core/column"
+	],
+	"styles": {
+		"border": {
+			"top": {
+				"color": "currentColor",
+				"style": "solid",
+				"width": "3px"
+			}
+		},
+		"spacing": {
+			"padding": {
+				"top": "var:preset|spacing|30"
+			}
+		}
+	}
+}

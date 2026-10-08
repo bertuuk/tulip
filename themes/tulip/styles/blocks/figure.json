@@ -1,0 +1,17 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"title": "Figure",
+	"slug": "figure",
+	"blockTypes": [
+		"core/paragraph"
+	],
+	"styles": {
+		"typography": {
+			"fontSize": "var:preset|font-size|display",
+			"fontWeight": "800",
+			"lineHeight": "0.9",
+			"letterSpacing": "-0.04em"
+		}
+	}
+}

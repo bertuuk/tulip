@@ -97,6 +97,20 @@ Combinacions que **no** passen AA i que cal evitar als patrons: `primary` sobre 
 
 **Site Ads by Bertuuk:** connectat però sense patró. Els seus blocs (AdSense, codi d'anunci) tenen sentit dins d'entrades del blog, no en una landing; es tractaran quan es faci la plantilla d'entrada.
 
+## 2026-10-08 · Segona tanda de seccions (Claude Design, "Secciones landing")
+
+**Patrons nous:** graella de característiques (i variant amb el títol al costat), xifres, testimoni gran, tres testimonis, passos, característiques en pestanyes (bloc Tabs de nucli), taula comparativa de plans, barra d'avís, últimes entrades (Query Loop), logos, equip, i 404 redissenyada.
+
+**Llenguatge comú, com a estils de bloc reutilitzables:** *Ruled* i *Ruled strong* (filet superior en `currentColor`, serveix en clar i fosc), *Divided* (filet inferior suau), *Divided columns* (filets verticals que passen a horitzontals al mòbil), *Figure* (número gran), *Plain* i *Statement* per a cites, *Text link* per a botons que s'han de llegir com a enllaç, *Comparison* per a taules, *Framed* per a imatges.
+
+**Text secundari que s'adapta a la secció:** les variables `--tulip-muted`, `--tulip-highlight` i `--tulip-surface` canvien segons la secció (clara, fosca, accent). El color "Contrast secondary" i "Primary" aplicats a un text es reinterpreten dins de seccions fosques, de manera que un patró es pot passar a fosc sense perdre contrast.
+
+**Diferències amb el disseny:**
+- Taula comparativa: al mòbil el disseny feia una taula per pla; aquí és una sola taula amb desplaçament horitzontal i la columna de funcions fixa (una sola taula és més fàcil d'editar). ✓ i — s'expliquen a la llegenda de la taula.
+- 404 sense il·lustració: depèn de cada marca.
+- Icones: bloc Icon de nucli (WP 7.0+). Un projecte pot registrar les seves amb `wp_register_icon()`.
+- Logos de mostra: SVG genèrics; en seccions fosques s'inverteixen (pensats per a logos monocroms).
+
 ## Pendent
 
 - Mode "només contingut" per als ajudants (bloquejar l'estructura dels patrons).

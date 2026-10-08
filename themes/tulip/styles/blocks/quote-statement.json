@@ -1,0 +1,28 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"title": "Statement",
+	"slug": "statement",
+	"blockTypes": [
+		"core/quote"
+	],
+	"styles": {
+		"border": {
+			"left": {
+				"width": "0",
+				"style": "none"
+			}
+		},
+		"spacing": {
+			"padding": {
+				"left": "0"
+			}
+		},
+		"typography": {
+			"fontSize": "var:preset|font-size|xxx-large",
+			"fontWeight": "600",
+			"lineHeight": "1.12",
+			"letterSpacing": "var(--wp--custom--letter-spacing--tight)"
+		}
+	}
+}

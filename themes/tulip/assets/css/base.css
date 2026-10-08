@@ -9,18 +9,34 @@
 
 :root {
 	--tulip-focus-color: var(--wp--preset--color--primary);
+	/* Secondary text and highlighted figures. Sections redefine them. */
+	--tulip-muted: var(--wp--preset--color--contrast-alt);
+	--tulip-highlight: var(--wp--preset--color--primary);
+	/* Background of the surface a block sits on, for sticky or masked parts. */
+	--tulip-surface: var(--wp--preset--color--base);
 }
+
+.is-style-section-alt { --tulip-surface: var(--wp--preset--color--base-alt); }
+.is-style-section-brand { --tulip-surface: var(--wp--preset--color--brand-subtle); }
+.is-style-card-recommended { --tulip-surface: var(--wp--preset--color--brand-subtle); }
+.is-style-section-accent { --tulip-surface: var(--wp--preset--color--accent); }
+.is-style-card { --tulip-surface: var(--wp--preset--color--base); }
 
 /* Dark and accent surfaces: a focus ring that keeps 3:1 against the
    background, and outline buttons in the surface's text colour. */
 .is-style-section-dark,
 .is-style-card-dark {
+	--tulip-surface: var(--wp--preset--color--brand-strong);
+	--tulip-muted: color-mix(in srgb, var(--wp--preset--color--base) 72%, transparent);
+	--tulip-highlight: var(--wp--preset--color--primary-light);
 	--tulip-check-color: var(--wp--preset--color--primary-light);
 	--tulip-focus-color: var(--wp--preset--color--primary-light);
 	--tulip-button-outline-color: var(--wp--preset--color--base);
 }
 
 .is-style-section-accent {
+	--tulip-muted: var(--wp--preset--color--on-accent);
+	--tulip-highlight: var(--wp--preset--color--on-accent);
 	--tulip-focus-color: var(--wp--preset--color--on-accent);
 	--tulip-button-outline-color: var(--wp--preset--color--on-accent);
 }
@@ -209,6 +225,236 @@ p.is-style-badge {
 	background: var(--tulip-check-color);
 	-webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E") center / contain no-repeat;
 	mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+/* Secondary text ----------------------------------------------------------- */
+
+/* Eyebrows and "Contrast secondary" text follow the surface they sit on, so
+   a pattern can move between light and dark sections without losing contrast. */
+.is-style-eyebrow {
+	color: var(--tulip-muted);
+}
+
+:is(.is-style-section-dark, .is-style-card-dark, .is-style-section-accent) .has-contrast-alt-color {
+	color: var(--tulip-muted) !important;
+}
+
+:is(.is-style-section-dark, .is-style-card-dark, .is-style-section-accent) :is(.has-primary-color, .has-primary-strong-color) {
+	color: var(--tulip-highlight) !important;
+}
+
+/* Big numbers. */
+.is-style-figure {
+	white-space: nowrap;
+}
+
+:is(.is-style-section-dark, .is-style-card-dark) .is-style-figure {
+	color: var(--tulip-highlight);
+}
+
+/* Divided columns: a thin rule between items, vertical side by side,
+   horizontal once they stack. */
+.is-style-columns-divided > * + * {
+	border-left: var(--wp--custom--border-width--default) solid color-mix(in srgb, currentColor 20%, transparent);
+	padding-left: var(--wp--preset--spacing--30);
+}
+
+@media (max-width: 781px) {
+	.is-style-columns-divided > * + * {
+		border-left: 0;
+		padding-left: 0;
+		border-top: var(--wp--custom--border-width--default) solid color-mix(in srgb, currentColor 20%, transparent);
+		padding-top: var(--wp--preset--spacing--30);
+	}
+}
+
+/* Quotes. */
+.wp-block-quote.is-style-statement::before {
+	content: "\201C";
+	display: block;
+	height: 0.5em;
+	font-size: var(--wp--preset--font-size--display);
+	font-weight: 800;
+	line-height: 1;
+	margin-bottom: var(--wp--preset--spacing--20);
+	color: var(--tulip-highlight);
+}
+
+.wp-block-quote:is(.is-style-plain, .is-style-statement) {
+	margin: 0;
+}
+
+.wp-block-quote.is-style-plain p {
+	font-weight: 600;
+	line-height: var(--wp--custom--line-height--tight);
+	letter-spacing: var(--wp--custom--letter-spacing--tight);
+}
+
+/* Text-link button: a call to action that reads as a link. */
+.wp-block-button.is-style-text .wp-block-button__link {
+	padding: 0.875rem 0;
+	background: transparent !important;
+	color: inherit !important;
+	text-decoration: underline;
+	text-decoration-thickness: 1.5px;
+	text-underline-offset: 5px;
+}
+
+.wp-block-button.is-style-text .wp-block-button__link:hover {
+	text-decoration-thickness: 3px;
+}
+
+/* Comparison table. */
+.wp-block-table.is-style-comparison {
+	overflow-x: auto;
+}
+
+.wp-block-table.is-style-comparison table {
+	min-width: 40rem;
+	border-collapse: collapse;
+}
+
+.wp-block-table.is-style-comparison :is(th, td) {
+	border: 0;
+	border-top: var(--wp--custom--border-width--default) solid color-mix(in srgb, currentColor 20%, transparent);
+	padding: var(--wp--preset--spacing--20) var(--wp--preset--spacing--20) var(--wp--preset--spacing--20) 0;
+	text-align: left;
+	vertical-align: top;
+}
+
+.wp-block-table.is-style-comparison thead :is(th, td) {
+	border-top: 0;
+	border-bottom: 2px solid currentColor;
+	font-size: var(--wp--preset--font-size--x-large);
+	font-weight: 700;
+}
+
+.wp-block-table.is-style-comparison tbody th {
+	font-weight: 500;
+}
+
+/* The feature column stays visible while the plans scroll sideways. */
+.wp-block-table.is-style-comparison :is(tbody th, thead td:first-child) {
+	position: sticky;
+	left: 0;
+	background: var(--tulip-surface);
+	z-index: 1;
+}
+
+.wp-block-table.is-style-comparison figcaption {
+	text-align: left;
+	color: var(--tulip-muted);
+	font-size: var(--wp--preset--font-size--small);
+}
+
+/* Tabs: the selected tab is marked by weight and a thick underline, not by
+   colour alone. */
+.wp-block-tabs .wp-block-tab-list {
+	gap: var(--wp--preset--spacing--40);
+	border-bottom: var(--wp--custom--border-width--default) solid color-mix(in srgb, currentColor 20%, transparent);
+	margin-bottom: var(--wp--preset--spacing--50);
+	flex-wrap: nowrap;
+	overflow-x: auto;
+}
+
+.wp-block-tabs .wp-block-tab-list [role="tab"] {
+	padding: 0.875rem 0 0.75rem;
+	margin-bottom: -1px;
+	border: 0;
+	border-bottom: 3px solid transparent;
+	background: transparent;
+	color: var(--tulip-muted);
+	font: inherit;
+	font-size: var(--wp--preset--font-size--medium);
+	font-weight: 500;
+	white-space: nowrap;
+	cursor: pointer;
+}
+
+.wp-block-tabs .wp-block-tab-list [role="tab"][aria-selected="true"] {
+	color: inherit;
+	font-weight: 700;
+	border-bottom-color: currentColor;
+}
+
+/* Testimonial author. */
+.tulip-author .wp-block-image {
+	margin: 0;
+	flex-shrink: 0;
+}
+
+.tulip-author .wp-block-image img {
+	width: 3rem;
+	height: 3rem;
+	object-fit: cover;
+}
+
+.tulip-author--lg .wp-block-image img {
+	width: 3.5rem;
+	height: 3.5rem;
+}
+
+.tulip-author p {
+	margin: 0;
+}
+
+/* Logo strip: logos centred in equal cells; monochrome logos are inverted
+   on dark surfaces. */
+.tulip-logo-grid {
+	border-top: var(--wp--custom--border-width--default) solid currentColor;
+	border-bottom: var(--wp--custom--border-width--default) solid color-mix(in srgb, currentColor 20%, transparent);
+}
+
+.tulip-logo-grid > .tulip-logo {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+	padding: var(--wp--preset--spacing--30) var(--wp--preset--spacing--20);
+}
+
+.tulip-logo-grid > .tulip-logo img {
+	max-height: 2.5rem;
+	width: auto;
+}
+
+@media (max-width: 781px) {
+	.tulip-logo-grid.is-style-columns-divided > * + * {
+		padding-left: var(--wp--preset--spacing--20);
+	}
+}
+
+:is(.is-style-section-dark, .is-style-card-dark) .tulip-logo img {
+	filter: invert(1);
+}
+
+/* Search field. */
+.wp-block-search__input {
+	min-height: 3.25rem;
+	padding: 0 1rem;
+	border: var(--wp--custom--border-width--default) solid var(--wp--preset--color--contrast-alt);
+	border-radius: var(--wp--custom--radius--button);
+	background: var(--wp--preset--color--base);
+	color: var(--wp--preset--color--contrast);
+	font: inherit;
+}
+
+.wp-block-search__inside-wrapper {
+	gap: var(--wp--preset--spacing--10);
+}
+
+.wp-block-search__button.wp-element-button {
+	margin-left: 0;
+	background: transparent;
+	color: inherit;
+	border: var(--wp--custom--border-width--strong) solid currentColor;
+	padding: calc(0.875rem - 2px) calc(1.5rem - 2px);
+}
+
+.wp-block-search__button.wp-element-button:hover {
+	background: transparent;
+	color: inherit;
+	text-decoration: underline;
 }
 
 /* Links ------------------------------------------------------------------ */
