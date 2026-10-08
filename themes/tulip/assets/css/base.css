@@ -113,6 +113,24 @@
 	margin-block-start: 0;
 }
 
+/* Page rhythm: full-width sections touch the header and the footer; plain
+   text gets breathing room instead. Works with any template that puts the
+   title (optional) and the content directly inside <main>. */
+main.wp-block-group > .tulip-page-title {
+	margin-block-start: var(--wp--preset--spacing--60);
+}
+
+/* No title: first block of the content gets the space, unless it is a
+   full-width section. */
+main > .wp-block-post-content:first-child > :first-child:not(.alignfull) {
+	margin-block-start: var(--wp--preset--spacing--60);
+}
+
+/* Last block: space before the footer, unless it is a full-width section. */
+main > .wp-block-post-content:last-child > :last-child:not(.alignfull) {
+	margin-block-end: var(--wp--preset--spacing--60);
+}
+
 /* Consecutive full-width sections sit flush, with no blockGap strip between them. */
 :where(.wp-block-post-content, main) > .alignfull + .alignfull {
 	margin-block-start: 0;

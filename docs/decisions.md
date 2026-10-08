@@ -111,6 +111,14 @@ Combinacions que **no** passen AA i que cal evitar als patrons: `primary` sobre 
 - Icones: bloc Icon de nucli (WP 7.0+). Un projecte pot registrar les seves amb `wp_register_icon()`.
 - Logos de mostra: SVG genèrics; en seccions fosques s'inverteixen (pensats per a logos monocroms).
 
+## 2026-10-08 · Espai entre capçalera, contingut i peu
+
+**Problema:** la plantilla de pàgina posava un farciment fix a dalt i a baix del `<main>`, de manera que les seccions de color a tota l'amplada quedaven separades de la capçalera i del peu per una franja blanca.
+
+**Solució (la que fan servir els temes de blocs actuals):** el `<main>` no té farciment. L'espai el posa el contingut segons què és: el títol de la pàgina porta marge a dalt; si no hi ha títol, el primer bloc porta marge només si no és una secció a tota l'amplada; el darrer bloc, igual, cap al peu. Resultat: una pàgina que comença o acaba amb una secció toca la capçalera o el peu, i una pàgina de text té aire. Aplicat a `page.html` i `single.html`.
+
+**La plantilla "Page without title"** continua sent la de les landings: amaga el títol de la pàgina.
+
 ## Pendent
 
 - Mode "només contingut" per als ajudants (bloquejar l'estructura dels patrons).
