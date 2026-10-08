@@ -6,7 +6,9 @@
 	"blockTypes": [
 		"core/paragraph",
 		"core/heading",
-		"core/post-date"
+		"core/post-date",
+		"core/post-terms",
+		"core/post-time-to-read"
 	],
 	"styles": {
 		"typography": {

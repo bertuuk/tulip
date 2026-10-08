@@ -542,6 +542,229 @@ p.is-style-badge {
 	color: var(--tulip-muted);
 }
 
+/* Breadcrumbs. */
+.tulip-breadcrumbs {
+	font-family: var(--wp--preset--font-family--mono);
+	font-size: var(--wp--preset--font-size--x-small);
+	letter-spacing: var(--wp--custom--letter-spacing--wide);
+	text-transform: uppercase;
+	color: var(--tulip-muted);
+}
+
+.tulip-breadcrumbs a {
+	color: inherit;
+}
+
+/* Post meta rows (category · date · reading time). */
+.tulip-post-meta > * {
+	margin: 0;
+}
+
+.tulip-post-meta > * + *::before {
+	content: "·";
+	margin-right: var(--wp--preset--spacing--10);
+	color: var(--tulip-muted);
+}
+
+.tulip-post-meta a {
+	color: inherit;
+	text-decoration: none;
+}
+
+/* Article header and body. */
+.tulip-standfirst {
+	color: var(--tulip-muted);
+	line-height: var(--wp--custom--line-height--snug);
+}
+
+.tulip-byline {
+	align-items: center;
+}
+
+.tulip-byline .wp-block-post-author__avatar img {
+	border-radius: 50%;
+}
+
+.tulip-byline .wp-block-post-author__name {
+	font-weight: 700;
+	margin: 0;
+}
+
+.tulip-article {
+	line-height: 1.7;
+}
+
+.tulip-article > :is(h2, h3) {
+	margin-block-start: var(--wp--preset--spacing--50);
+}
+
+.tulip-article > h2 {
+	font-size: var(--wp--preset--font-size--x-large);
+	line-height: var(--wp--custom--line-height--tight);
+}
+
+.tulip-article > h3 {
+	font-size: var(--wp--preset--font-size--medium);
+	font-weight: 700;
+}
+
+.tulip-article > .wp-block-quote:not([class*="is-style-"]) {
+	margin-inline: 0;
+	padding: var(--wp--preset--spacing--30) 0;
+	border: 0;
+	border-top: var(--wp--custom--border-width--default) solid currentColor;
+	border-bottom: var(--wp--custom--border-width--default) solid color-mix(in srgb, currentColor 20%, transparent);
+	font-size: var(--wp--preset--font-size--x-large);
+	font-weight: 600;
+	line-height: var(--wp--custom--line-height--tight);
+	letter-spacing: var(--wp--custom--letter-spacing--tight);
+}
+
+.tulip-article > .wp-block-quote cite {
+	display: block;
+	margin-top: var(--wp--preset--spacing--20);
+	font-family: var(--wp--preset--font-family--mono);
+	font-size: var(--wp--preset--font-size--x-small);
+	font-style: normal;
+	font-weight: 400;
+	letter-spacing: var(--wp--custom--letter-spacing--wide);
+	text-transform: uppercase;
+	color: var(--tulip-muted);
+}
+
+.tulip-article .wp-block-image img {
+	border-radius: var(--wp--custom--radius--card);
+}
+
+.tulip-post-footer .wp-block-post-terms a {
+	margin-right: var(--wp--preset--spacing--20);
+}
+
+.tulip-author-box .wp-block-avatar img {
+	border-radius: 50%;
+}
+
+.tulip-author-box .wp-block-post-author-biography {
+	margin: 0;
+}
+
+/* Category filter: a row of links, current one marked by weight and a thick
+   underline. */
+.tulip-term-nav {
+	flex-wrap: nowrap !important;
+	overflow-x: auto;
+	border-bottom: var(--wp--custom--border-width--default) solid color-mix(in srgb, currentColor 20%, transparent);
+}
+
+.tulip-term-nav > p,
+.tulip-term-nav .wp-block-categories {
+	margin: 0;
+}
+
+.tulip-term-nav .wp-block-categories {
+	display: flex;
+	flex-wrap: nowrap;
+	white-space: nowrap;
+	gap: 0 var(--wp--preset--spacing--30);
+	padding: 0;
+	list-style: none;
+}
+
+.tulip-term-nav a {
+	display: inline-block;
+	padding: 0.5rem 0 0.625rem;
+	margin-bottom: -1px;
+	border-bottom: 3px solid transparent;
+	color: var(--tulip-muted);
+	text-decoration: none;
+}
+
+.tulip-term-nav a:hover {
+	color: inherit;
+}
+
+.tulip-term-nav :is(a[aria-current="page"], .current-cat > a) {
+	color: inherit;
+	font-weight: 700;
+	border-bottom-color: currentColor;
+}
+
+/* Blog index: on the first page the latest post is shown large. */
+.tulip-post-grid .wp-block-post-title a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.tulip-post-grid .wp-block-post-title a:hover {
+	text-decoration: underline;
+}
+
+.tulip-card-excerpt {
+	display: none;
+}
+
+@media (min-width: 782px) {
+	body.blog:not(.paged) .tulip-post-grid .wp-block-post-template > li:first-child {
+		grid-column: 1 / -1;
+		display: grid;
+		grid-template-columns: 7fr 5fr;
+		column-gap: var(--wp--preset--spacing--50);
+		align-content: center;
+		padding-bottom: var(--wp--preset--spacing--50);
+		border-bottom: var(--wp--custom--border-width--default) solid currentColor;
+	}
+
+	body.blog:not(.paged) .tulip-post-grid .wp-block-post-template > li:first-child > .wp-block-post-featured-image {
+		grid-row: 1 / span 4;
+		margin: 0;
+	}
+
+	body.blog:not(.paged) .tulip-post-grid .wp-block-post-template > li:first-child > * {
+		align-self: end;
+	}
+
+	body.blog:not(.paged) .tulip-post-grid .wp-block-post-template > li:first-child > .wp-block-post-title ~ * {
+		align-self: start;
+	}
+
+	body.blog:not(.paged) .tulip-post-grid .wp-block-post-template > li:first-child .wp-block-post-title {
+		font-size: var(--wp--preset--font-size--xx-large) !important;
+	}
+
+	body.blog:not(.paged) .tulip-post-grid .wp-block-post-template > li:first-child .tulip-card-excerpt {
+		display: block;
+		color: var(--tulip-muted);
+	}
+}
+
+/* Pagination. */
+.wp-block-query-pagination {
+	margin-top: var(--wp--preset--spacing--50);
+	padding-top: var(--wp--preset--spacing--30);
+	border-top: var(--wp--custom--border-width--default) solid color-mix(in srgb, currentColor 20%, transparent);
+	font-weight: 600;
+}
+
+.wp-block-query-pagination-numbers .page-numbers {
+	padding: 0.25rem 0.5rem;
+}
+
+.wp-block-query-pagination-numbers .current {
+	text-decoration: underline;
+	text-decoration-thickness: 3px;
+	text-underline-offset: 6px;
+}
+
+/* Listing pages end with the pagination: leave room before the footer. */
+.tulip-main-listing {
+	padding-bottom: var(--wp--preset--spacing--70);
+}
+
+/* Page headers: a thin line closes a light header. */
+.tulip-page-header:not([class*="is-style-section"]) {
+	border-bottom: var(--wp--custom--border-width--default) solid color-mix(in srgb, currentColor 20%, transparent);
+}
+
 /* Links ------------------------------------------------------------------ */
 
 a {

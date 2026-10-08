@@ -55,4 +55,26 @@ if ( ! function_exists( 'tulip_register_pattern_categories' ) ) :
 endif;
 add_action( 'init', 'tulip_register_pattern_categories', 9 );
 
+if ( ! function_exists( 'tulip_mark_all_posts_link' ) ) :
+	/**
+	 * In the blog category filter, mark "All" as the current page on the
+	 * blog index, the same way the Categories block marks the current one.
+	 *
+	 * @param string $block_content Rendered block.
+	 * @param array  $block         Block data.
+	 * @return string
+	 */
+	function tulip_mark_all_posts_link( $block_content, $block ) {
+		if ( ! is_home() || empty( $block['attrs']['className'] ) || false === strpos( $block['attrs']['className'], 'tulip-all-posts' ) ) {
+			return $block_content;
+		}
+		$processor = new WP_HTML_Tag_Processor( $block_content );
+		if ( $processor->next_tag( 'a' ) ) {
+			$processor->set_attribute( 'aria-current', 'page' );
+		}
+		return $processor->get_updated_html();
+	}
+endif;
+add_filter( 'render_block_core/paragraph', 'tulip_mark_all_posts_link', 10, 2 );
+
 require_once get_theme_file_path( 'inc/plugin-integrations.php' );

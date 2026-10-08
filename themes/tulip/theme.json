@@ -462,10 +462,14 @@
 			},
 			"caption": {
 				"color": {
-					"text": "var:preset|color|contrast-alt"
+					"text": "var(--tulip-muted)"
 				},
 				"typography": {
-					"fontSize": "var:preset|font-size|x-small"
+					"fontSize": "var:preset|font-size|x-small",
+					"fontFamily": "var:preset|font-family|mono",
+					"textTransform": "uppercase",
+					"letterSpacing": "var(--wp--custom--letter-spacing--wide)",
+					"lineHeight": "var(--wp--custom--line-height--normal)"
 				}
 			}
 		},

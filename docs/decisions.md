@@ -119,6 +119,23 @@ Combinacions que **no** passen AA i que cal evitar als patrons: `primary` sobre 
 
 **La plantilla "Page without title"** continua sent la de les landings: amaga el títol de la pàgina.
 
+## 2026-10-08 · Blog i pàgines (Claude Design, "Blog y páginas")
+
+**Plantilles noves:** `home.html` (índex del blog), `archive.html` (categories, etiquetes, dates) i `single.html` (entrada) refeta. El contingut de cada una viu en un patró ocult (`tulip/hidden-blog`, `hidden-archive`, `hidden-single`) perquè els textos siguin traduïbles.
+
+**Entrada:** molles de pa, categoria · data · temps de lectura, títol, entradeta (l'extracte de l'entrada), autor, imatge destacada ampla, cos a una columna de lectura (~68 caràcters) amb imatges "amples" que en surten, etiquetes, caixa d'autor i "Sigue leyendo" amb 3 entrades. Estil d'article: H2/H3 a mida de lectura, cita amb filets, peus de foto en mono, patró *Note box* per a notes.
+
+**Índex del blog:** títol, filtre de categories com a fila d'enllaços (bloc Categories; "Tots" es marca com a pàgina actual a l'índex), la darrera entrada en gran a la primera pàgina (CSS, sense trencar la paginació), graella i paginació. Estat buit amb cercador.
+
+**Capçaleres de pàgina interna:** mínima, amb imatge, fosca amb botons i legal compacta (patrons). Porten l'H1, per això van amb la plantilla "Page without title".
+
+**Imatge + text:** imatge a l'esquerra (clar), imatge a la dreta (fosc) i dues columnes amb la imatge a dalt.
+
+**Diferències amb el disseny:**
+- Enllaços per compartir: no hi ha bloc de nucli; queda fora (es pot afegir amb un plugin).
+- "Sigue leyendo" pot incloure l'entrada actual: el Query Loop de nucli no permet excloure-la sense codi.
+- Peus de foto en mono i majúscules a tot el lloc (abans, cos petit).
+
 ## Pendent
 
 - Mode "només contingut" per als ajudants (bloquejar l'estructura dels patrons).
