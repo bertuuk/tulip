@@ -3,7 +3,7 @@ Contributors: bertanicolau
 Requires at least: 6.6
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 0.1.0
+Stable tag: 0.2.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,9 +13,16 @@ A restrained, accessible block theme for product and marketing websites.
 
 Tulip takes its design tokens (colour, type, spacing, radius, shadow) from the Tuk DS design system. The editor only offers contrast-checked colour combinations and preset sizes, so content editors can change text and images without breaking the design or the accessibility of the page.
 
-Section styles (Alternative, Brand subtle, Brand dark) recolour a whole group, including its links, buttons and focus ring, in one click.
+Section styles (Alternative, Brand subtle, Brand dark, Accent) recolour a whole group, including its links, buttons and focus ring, in one click.
+
+Patterns for product pages: hero with image, highlight strip, heading and text, text and image, numbered features, video with call to action, pricing, FAQ (accordion), closing call to action, dark header and footer, and a full landing page that combines them.
 
 == Changelog ==
+
+= 0.2.0 =
+* Section patterns and a landing page pattern.
+* Block styles: Eyebrow (paragraph), Card and Card dark (group, column), Inline (list), Accent section.
+* Type scale for marketing pages (up to 88 px, body 18 px) and button radius token.
 
 = 0.1.0 =
 * Base theme: theme.json with Tuk DS tokens, section styles, core templates and parts.

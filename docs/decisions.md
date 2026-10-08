@@ -34,7 +34,34 @@ Combinacions que **no** passen AA i que cal evitar als patrons: `primary` sobre 
 
 **Requisits.** WordPress 6.6+ (theme.json v3 i estils de secció), provat a 7.1.3. PHP 7.4+.
 
+## 2026-10-08 · Patrons de secció
+
+**Patrons de Tulip, no del projecte.** Sortits de la landing de Brako (v14 i "logo barras"), però fan servir només rols de color, mides i estils del tema. La marca d'un projecte s'aplica després com a variació d'estil, i la pàgina sencera canvia sense tocar cap patró.
+
+**Patrons:** hero amb imatge, franja de llista, títol + text, text + imatge (fosc), característiques numerades, vídeo + CTA, preus, preguntes freqüents, CTA final, capçalera fosca, peu de 4 columnes i una pàgina landing que els combina (apareix en crear una pàgina nova).
+
+**Peces noves:**
+- Estil de paràgraf *Eyebrow* (mono, majúscules, espaiat).
+- Estils *Card* i *Card dark* per a grups i columnes. Aplicats a la columna, les targetes de preus tenen la mateixa alçada.
+- Estil de llista *Inline*: llista horitzontal que continua sent `<ul>` per al lector de pantalla.
+- Secció *Accent* i color `on-accent` (text sobre l'accent), com `--color-text-on-accent` de Tuk DS.
+
+**El radi del botó és un token, no un estil.** `custom.radius.button` (per defecte el radi de control de Tuk DS, 6 px). Una marca amb botons pastilla el posa a `full` a la seva variació. Si fos un estil de bloc, no es podria combinar amb *outline*.
+
+**Escala de mides per a web pública:** cos 16→18 px, `x-small` 13, `small` 15, `large` 19→22, `x-large` 22→28, `xx-large` 30→44, `xxx-large` (H2) 36→56, `display` (H1) 44→88. Totes fluides i amb una ràtio màx./mín. ≤ 2,5 perquè el zoom continuï funcionant (WCAG 1.4.4). Interlineat `compact` 1,05 per a H1/H2.
+
+**Preguntes amb el bloc Accordion de nucli** (WP 6.9+): `aria-expanded`, regió i teclat ja resolts.
+
+**Fora dels patrons:** formularis (WordPress no en té de nucli; es triarà per projecte) i il·lustracions de producte (van com a imatges amb text alternatiu). El vídeo és un bloc Vídeo buit: a la web no es veu fins que s'hi puja el fitxer.
+
+**Color de fons lliure als grups:** es manté (decisió de la Berta).
+
+**Desenvolupament:** `WP_DEVELOPMENT_MODE=theme` a wp-env perquè els patrons nous apareguin sense memòria cau.
+
 ## Pendent
+
+- Que els botons de les targetes de preus quedin alineats a baix quan el contingut és desigual.
+- Mode "només contingut" per als ajudants (bloquejar l'estructura dels patrons).
 
 - Dark mode: theme.json no el suporta de manera nativa. No decidit.
 - Sincronització automàtica de tokens des de `tuk-ds/src/styles/tokens.css`.

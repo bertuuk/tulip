@@ -2,7 +2,9 @@
   "$schema": "https://schemas.wp.org/trunk/wp-env.json",
   "core": null,
   "phpVersion": "8.2",
-  "themes": [ "./themes/tulip" ],
+  "themes": [
+    "./themes/tulip"
+  ],
   "plugins": [
     "https://downloads.wordpress.org/plugin/create-block-theme.latest-stable.zip",
     "https://downloads.wordpress.org/plugin/theme-check.latest-stable.zip"
@@ -12,7 +14,8 @@
     "WP_DEBUG_LOG": true,
     "WP_DEBUG_DISPLAY": true,
     "SCRIPT_DEBUG": true,
-    "WP_ENVIRONMENT_TYPE": "local"
+    "WP_ENVIRONMENT_TYPE": "local",
+    "WP_DEVELOPMENT_MODE": "theme"
   },
   "lifecycleScripts": {
     "afterStart": "npx wp-env run cli wp theme activate tulip"
