@@ -2,7 +2,7 @@
 /**
  * Title: Hero with image
  * Slug: tulip/hero-media
- * Categories: banner
+ * Categories: tulip, banner
  * Keywords: hero, header, intro, landing
  * Viewport Width: 1440
  * Description: Opening section on a dark background: eyebrow, main heading, intro, two buttons and an image.

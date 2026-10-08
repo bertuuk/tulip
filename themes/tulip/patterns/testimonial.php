@@ -2,7 +2,7 @@
 /**
  * Title: Testimonial, large
  * Slug: tulip/testimonial
- * Categories: testimonials
+ * Categories: tulip, testimonials
  * Keywords: testimonial, quote, review, customer
  * Viewport Width: 1440
  * Description: A single large quote with the name, role and an optional photo of the person, on a dark background.

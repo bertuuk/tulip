@@ -2,7 +2,7 @@
 /**
  * Title: Latest posts
  * Slug: tulip/latest-posts
- * Categories: posts, featured
+ * Categories: tulip, posts, featured
  * Keywords: blog, posts, news, articles
  * Viewport Width: 1440
  * Description: Heading with a link to the blog and the three latest posts as cards: image, date, title and a read more link.

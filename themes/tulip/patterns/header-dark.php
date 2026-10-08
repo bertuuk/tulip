@@ -2,7 +2,7 @@
 /**
  * Title: Header, dark with buttons
  * Slug: tulip/header-dark
- * Categories: header
+ * Categories: tulip, header
  * Block Types: core/template-part/header
  * Description: Dark header with logo, site name, menu and two buttons. Pairs with a dark hero.
  *

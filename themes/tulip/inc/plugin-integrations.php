@@ -93,13 +93,13 @@ function tulip_marketing_blocks_integration() {
 		'hero-form' => array(
 			'title'       => _x( 'Hero with email form', 'pattern title', 'tulip' ),
 			'description' => _x( 'Opening section with heading, intro, an email signup form and an image. Needs Marketing Blocks.', 'pattern description', 'tulip' ),
-			'categories'  => array( 'banner' ),
+			'categories'  => array( 'tulip', 'banner' ),
 			'keywords'    => array( 'hero', 'email', 'signup', 'waitlist', 'form' ),
 		),
 		'cta-form'  => array(
 			'title'       => _x( 'Closing call to action with email form', 'pattern title', 'tulip' ),
 			'description' => _x( 'Very large heading next to an email signup form, on a dark background. Needs Marketing Blocks.', 'pattern description', 'tulip' ),
-			'categories'  => array( 'call-to-action' ),
+			'categories'  => array( 'tulip', 'call-to-action' ),
 			'keywords'    => array( 'cta', 'email', 'signup', 'waitlist', 'form' ),
 		),
 	);

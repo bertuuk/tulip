@@ -2,7 +2,7 @@
 /**
  * Title: Figures
  * Slug: tulip/figures
- * Categories: featured, about
+ * Categories: tulip, featured, about
  * Keywords: numbers, stats, figures, data
  * Viewport Width: 1440
  * Description: Three or four big numbers with a label and a short line, separated by thin rules.
@@ -22,7 +22,7 @@
 <!-- /wp:heading --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"align":"wide","className":"is-style-columns-divided","style":{"spacing":{"blockGap":"var:preset|spacing|40 var:preset|spacing|30"}},"layout":{"type":"grid","columnCount":4,"minimumColumnWidth":"12rem"}} -->
+<!-- wp:group {"align":"wide","className":"is-style-columns-divided","style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"grid","columnCount":4,"minimumColumnWidth":"12rem"}} -->
 <div class="wp-block-group alignwide is-style-columns-divided"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"className":"is-style-figure"} -->
 <p class="is-style-figure"><?php echo esc_html_x( '0 €', 'figure value', 'tulip' ); ?></p>

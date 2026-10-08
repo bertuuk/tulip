@@ -2,7 +2,7 @@
 /**
  * Title: Features in tabs
  * Slug: tulip/features-tabs
- * Categories: featured, services
+ * Categories: tulip, featured, services
  * Keywords: tabs, features, product tour
  * Viewport Width: 1440
  * Description: Three or four tabs; each shows a title, a short text, a link and an image. Uses the core Tabs block.

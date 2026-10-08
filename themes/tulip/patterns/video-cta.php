@@ -2,7 +2,7 @@
 /**
  * Title: Video with call to action
  * Slug: tulip/video-cta
- * Categories: videos, call-to-action
+ * Categories: tulip, videos, call-to-action
  * Keywords: video, demo, cta, accent
  * Viewport Width: 1440
  * Description: A video next to a heading, short text and a button, on the accent colour.

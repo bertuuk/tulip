@@ -2,7 +2,7 @@
 /**
  * Title: Header
  * Slug: tulip/header
- * Categories: header
+ * Categories: tulip, header
  * Block Types: core/template-part/header
  * Description: Light header with logo, site name, menu and a call-to-action button, separated from the page by a thin line.
  *

@@ -2,7 +2,7 @@
 /**
  * Title: Footer
  * Slug: tulip/footer
- * Categories: footer
+ * Categories: tulip, footer
  * Block Types: core/template-part/footer
  * Description: Dark footer with the site name and tagline, three link columns and a bottom line.
  *

@@ -2,7 +2,7 @@
 /**
  * Title: Closing call to action
  * Slug: tulip/cta-large
- * Categories: call-to-action
+ * Categories: tulip, call-to-action
  * Keywords: cta, closing, signup, waitlist, contact
  * Viewport Width: 1440
  * Description: Very large heading with a short line and a button, on a dark background. Made to close a page.

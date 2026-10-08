@@ -2,7 +2,7 @@
 /**
  * Title: Frequently asked questions
  * Slug: tulip/faq
- * Categories: text, about
+ * Categories: tulip, text, about
  * Keywords: faq, questions, accordion, answers
  * Viewport Width: 1440
  * Description: Heading on the left and an accordion of questions on the right.

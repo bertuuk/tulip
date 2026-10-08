@@ -2,7 +2,7 @@
 /**
  * Title: Team
  * Slug: tulip/team
- * Categories: team, about
+ * Categories: tulip, team, about
  * Keywords: team, people, about us
  * Viewport Width: 1440
  * Description: Four people with photo, name, role and an optional one-line bio.
@@ -30,7 +30,7 @@
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
 
-<!-- wp:group {"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|40 var:preset|spacing|30"}},"layout":{"type":"grid","columnCount":4,"minimumColumnWidth":"14rem"}} -->
+<!-- wp:group {"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"grid","columnCount":4,"minimumColumnWidth":"14rem"}} -->
 <div class="wp-block-group alignwide"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
 <div class="wp-block-group"><!-- wp:image {"aspectRatio":"4/5","scale":"cover","sizeSlug":"large","className":"is-style-framed"} -->
 <figure class="wp-block-image size-large is-style-framed"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/placeholder-portrait.svg' ) ); ?>" alt="" style="aspect-ratio:4/5;object-fit:cover"/></figure>

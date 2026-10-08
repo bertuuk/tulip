@@ -2,7 +2,7 @@
 /**
  * Title: Numbered features
  * Slug: tulip/feature-list
- * Categories: services, text
+ * Categories: tulip, services, text
  * Keywords: features, steps, benefits, list, numbered
  * Viewport Width: 1440
  * Description: Heading and intro on the left, a numbered list of four features on the right.

@@ -2,7 +2,7 @@
 /**
  * Title: Announcement bar
  * Slug: tulip/announcement
- * Categories: banner, call-to-action
+ * Categories: tulip, banner, call-to-action
  * Keywords: announcement, notice, banner, news
  * Viewport Width: 1440
  * Description: A thin strip with one short sentence and a link. Place it at the very top of a page or in the header.

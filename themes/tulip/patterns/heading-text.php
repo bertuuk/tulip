@@ -2,7 +2,7 @@
 /**
  * Title: Heading and text
  * Slug: tulip/heading-text
- * Categories: text
+ * Categories: tulip, text
  * Keywords: intro, problem, about, statement, two columns
  * Viewport Width: 1440
  * Description: Eyebrow and large heading on the left, body text on the right, closing with a stronger sentence.

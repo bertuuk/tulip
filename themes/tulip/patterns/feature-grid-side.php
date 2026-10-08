@@ -2,7 +2,7 @@
 /**
  * Title: Feature grid, heading on the side
  * Slug: tulip/feature-grid-side
- * Categories: featured, services
+ * Categories: tulip, featured, services
  * Keywords: features, grid, icons, benefits
  * Viewport Width: 1440
  * Description: Heading, intro and link on the left; six features in two columns on the right, each with an icon and a divider.
@@ -34,7 +34,7 @@
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"67%"} -->
-<div class="wp-block-column" style="flex-basis:67%"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30 var:preset|spacing|40"}},"layout":{"type":"grid","columnCount":2,"minimumColumnWidth":"16rem"}} -->
+<div class="wp-block-column" style="flex-basis:67%"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|40"}},"layout":{"type":"grid","columnCount":2,"minimumColumnWidth":"16rem"}} -->
 <div class="wp-block-group"><!-- wp:group {"className":"is-style-divided","style":{"spacing":{"blockGap":"var:preset|spacing|10"}},"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group is-style-divided"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
 <div class="wp-block-group"><!-- wp:icon {"icon":"core/people","style":{"dimensions":{"width":"28px"}}} /-->

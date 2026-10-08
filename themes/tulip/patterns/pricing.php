@@ -2,7 +2,7 @@
 /**
  * Title: Pricing
  * Slug: tulip/pricing
- * Categories: call-to-action, featured
+ * Categories: tulip, call-to-action, featured
  * Keywords: pricing, plans, prices, cards
  * Viewport Width: 1440
  * Description: Heading with a short note, then three plan cards; the last one is highlighted in dark.

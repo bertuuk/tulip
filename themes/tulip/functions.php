@@ -38,4 +38,21 @@ if ( ! function_exists( 'tulip_enqueue_styles' ) ) :
 endif;
 add_action( 'wp_enqueue_scripts', 'tulip_enqueue_styles' );
 
+if ( ! function_exists( 'tulip_register_pattern_categories' ) ) :
+	/**
+	 * One category with every Tulip pattern, so they are easy to find in the
+	 * inserter. Patterns also stay in the core categories (Banner, Text...).
+	 */
+	function tulip_register_pattern_categories() {
+		register_block_pattern_category(
+			'tulip',
+			array(
+				'label'       => _x( 'Tulip', 'block pattern category', 'tulip' ),
+				'description' => __( 'Sections designed for Tulip.', 'tulip' ),
+			)
+		);
+	}
+endif;
+add_action( 'init', 'tulip_register_pattern_categories', 9 );
+
 require_once get_theme_file_path( 'inc/plugin-integrations.php' );

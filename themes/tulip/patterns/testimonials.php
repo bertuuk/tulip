@@ -2,7 +2,7 @@
 /**
  * Title: Testimonials, three
  * Slug: tulip/testimonials
- * Categories: testimonials
+ * Categories: tulip, testimonials
  * Keywords: testimonials, quotes, reviews, customers
  * Viewport Width: 1440
  * Description: Three short quotes with name, role and optional photo.

@@ -2,7 +2,7 @@
 /**
  * Title: Landing page
  * Slug: tulip/page-landing
- * Categories: featured
+ * Categories: tulip, featured
  * Keywords: landing, product, page, full
  * Post Types: page, wp_template
  * Block Types: core/post-content

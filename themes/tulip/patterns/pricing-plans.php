@@ -2,7 +2,7 @@
 /**
  * Title: Pricing, plan cards
  * Slug: tulip/pricing-plans
- * Categories: call-to-action, featured
+ * Categories: tulip, call-to-action, featured
  * Keywords: pricing, plans, prices, cards, recommended, features
  * Viewport Width: 1440
  * Description: Three plan cards based on the Tuk DS PlanCard: eyebrow, name, price, description, feature list with checks and a full-width button. The middle plan is marked as recommended.

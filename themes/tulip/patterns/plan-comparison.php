@@ -2,7 +2,7 @@
 /**
  * Title: Plan comparison table
  * Slug: tulip/plan-comparison
- * Categories: call-to-action, featured
+ * Categories: tulip, call-to-action, featured
  * Keywords: pricing, plans, comparison, table
  * Viewport Width: 1440
  * Description: A table with one column per plan and one row per feature. On mobile the plans scroll sideways and the feature names stay fixed.

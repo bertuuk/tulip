@@ -2,7 +2,7 @@
 /**
  * Title: How it works, three steps
  * Slug: tulip/steps
- * Categories: featured, about
+ * Categories: tulip, featured, about
  * Keywords: steps, how it works, process
  * Viewport Width: 1440
  * Description: Three numbered steps in a row, each with a title, a short text and an optional image. Stacks on mobile.

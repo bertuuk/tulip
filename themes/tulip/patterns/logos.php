@@ -2,7 +2,7 @@
 /**
  * Title: Logo strip
  * Slug: tulip/logos
- * Categories: featured, about
+ * Categories: tulip, featured, about
  * Keywords: logos, clients, partners, trust
  * Viewport Width: 1440
  * Description: A row of five or six client or partner logos with a small heading. Each logo needs alternative text.

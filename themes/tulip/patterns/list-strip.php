@@ -2,7 +2,7 @@
 /**
  * Title: Highlight strip
  * Slug: tulip/list-strip
- * Categories: text
+ * Categories: tulip, text
  * Keywords: strip, band, list, features, tags
  * Viewport Width: 1440
  * Description: Narrow full-width band in the accent colour with a label and a horizontal list.

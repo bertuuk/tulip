@@ -2,7 +2,7 @@
 /**
  * Title: Text and image
  * Slug: tulip/media-text
- * Categories: media, about
+ * Categories: tulip, media, about
  * Keywords: product, screenshot, mobile, about, what is
  * Viewport Width: 1440
  * Description: Eyebrow, heading and text next to a tall image, on a dark background.
