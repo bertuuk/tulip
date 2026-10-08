@@ -1,0 +1,144 @@
+/**
+ * Tulip styles for Marketing Blocks by Bertuuk — GetResponse form.
+ *
+ * Loaded only on pages that contain the block (wp_enqueue_block_style).
+ * The form takes its colours from the surrounding section, like Tulip's own
+ * buttons. The block writes its colour settings as inline styles, so colour
+ * declarations here use !important; under Tulip the block's colour controls
+ * are intentionally ignored to keep contrast guaranteed.
+ */
+
+/* Colour roles ------------------------------------------------------------ */
+
+.wp-block-create-block-getresponse-form-block {
+	--tulip-field-bg: var(--wp--preset--color--base);
+	--tulip-field-text: var(--wp--preset--color--contrast);
+	--tulip-field-border: var(--wp--preset--color--contrast-alt);
+	--tulip-field-placeholder: var(--wp--preset--color--contrast-alt);
+	--tulip-btn-bg: var(--wp--preset--color--primary);
+	--tulip-btn-text: var(--wp--preset--color--base);
+	--tulip-btn-bg-hover: var(--wp--preset--color--primary-strong);
+	--tulip-check-bg: var(--wp--preset--color--primary);
+	--tulip-check-tick: var(--wp--preset--color--base);
+
+	color: inherit !important;
+	padding: 0;
+}
+
+:is(.is-style-section-dark, .is-style-card-dark) .wp-block-create-block-getresponse-form-block {
+	--tulip-field-bg: transparent;
+	--tulip-field-text: var(--wp--preset--color--base);
+	--tulip-field-border: var(--wp--preset--color--primary-light);
+	--tulip-field-placeholder: var(--wp--preset--color--primary-light);
+	--tulip-btn-bg: var(--wp--preset--color--base);
+	--tulip-btn-text: var(--wp--preset--color--brand-strong);
+	--tulip-btn-bg-hover: var(--wp--preset--color--primary-light);
+	--tulip-check-bg: var(--wp--preset--color--base);
+	--tulip-check-tick: var(--wp--preset--color--brand-strong);
+}
+
+.is-style-section-accent .wp-block-create-block-getresponse-form-block {
+	--tulip-field-bg: var(--wp--preset--color--base);
+	--tulip-field-text: var(--wp--preset--color--contrast);
+	--tulip-field-border: var(--wp--preset--color--on-accent);
+	--tulip-btn-bg: var(--wp--preset--color--on-accent);
+	--tulip-btn-text: var(--wp--preset--color--accent);
+	--tulip-btn-bg-hover: var(--wp--preset--color--on-accent);
+	--tulip-check-bg: var(--wp--preset--color--on-accent);
+	--tulip-check-tick: var(--wp--preset--color--accent);
+}
+
+/* Layout and type ----------------------------------------------------------- */
+
+.wp-block-create-block-getresponse-form-block .lead-mail-form .form-group__first {
+	gap: var(--wp--preset--spacing--10) var(--wp--preset--spacing--10);
+}
+
+.wp-block-create-block-getresponse-form-block .lead-mail-form label,
+.wp-block-create-block-getresponse-form-block .form-error-region {
+	color: inherit !important;
+}
+
+.wp-block-create-block-getresponse-form-block .form-field__email-label label {
+	font-size: var(--wp--preset--font-size--small);
+	font-weight: 600;
+	margin-bottom: 0.25rem;
+}
+
+/* Email field and button: same height, Tulip radius, inherited type. */
+.wp-block-create-block-getresponse-form-block .lead-mail-form .form-group input[type="text"],
+.wp-block-create-block-getresponse-form-block .lead-mail-form .form-group input[type="button"] {
+	box-sizing: border-box;
+	min-height: 3.25rem;
+	font-family: inherit;
+	font-size: var(--wp--preset--font-size--medium);
+	border-radius: var(--wp--custom--radius--button);
+}
+
+.wp-block-create-block-getresponse-form-block .lead-mail-form .form-group input[type="text"] {
+	padding: 0 1rem;
+	background-color: var(--tulip-field-bg) !important;
+	color: var(--tulip-field-text) !important;
+	border: var(--wp--custom--border-width--default) solid var(--tulip-field-border) !important;
+}
+
+.wp-block-create-block-getresponse-form-block .lead-mail-form .form-group input[type="text"]::placeholder {
+	color: var(--tulip-field-placeholder) !important;
+	opacity: 1;
+}
+
+.wp-block-create-block-getresponse-form-block .lead-mail-form .form-group input[type="button"] {
+	padding: 0 1.5rem;
+	font-weight: 600;
+	text-transform: none;
+	letter-spacing: normal;
+	background-color: var(--tulip-btn-bg) !important;
+	color: var(--tulip-btn-text) !important;
+	border: 0 !important;
+	transition: background-color var(--wp--custom--duration--normal) ease;
+}
+
+.wp-block-create-block-getresponse-form-block .lead-mail-form .form-group input[type="button"]:hover {
+	background-color: var(--tulip-btn-bg-hover) !important;
+	color: var(--tulip-btn-text) !important;
+	text-decoration: underline;
+}
+
+/* Consent checkbox. */
+.wp-block-create-block-getresponse-form-block .dahlia-checkbox-label {
+	font-size: var(--wp--preset--font-size--small);
+	line-height: var(--wp--custom--line-height--normal);
+}
+
+.wp-block-create-block-getresponse-form-block .dahlia-checkbox-box {
+	background-color: var(--tulip-field-bg) !important;
+	border-color: var(--tulip-field-border) !important;
+	border-radius: var(--wp--custom--radius--sm);
+}
+
+.wp-block-create-block-getresponse-form-block .dahlia-checkbox-input:checked + .dahlia-checkbox-label .dahlia-checkbox-box {
+	background-color: var(--tulip-check-bg) !important;
+	border-color: var(--tulip-check-bg) !important;
+}
+
+.wp-block-create-block-getresponse-form-block .dahlia-tick {
+	border-color: var(--tulip-check-tick) !important;
+}
+
+/* Focus: the real checkbox is invisible, so its ring goes on the drawn box. */
+.wp-block-create-block-getresponse-form-block .lead-mail-form input:focus-visible,
+.wp-block-create-block-getresponse-form-block .dahlia-checkbox-input:focus-visible + .dahlia-checkbox-label .dahlia-checkbox-box {
+	outline: var(--wp--custom--focus--width) solid var(--tulip-focus-color) !important;
+	outline-offset: var(--wp--custom--focus--offset);
+}
+
+/* Desktop row: keep the full border (the plugin switches to an underline). */
+@media (min-width: 960px) {
+	.wp-block-create-block-getresponse-form-block .lead-mail-form .form-group input[type="text"] {
+		border: var(--wp--custom--border-width--default) solid var(--tulip-field-border) !important;
+	}
+
+	.wp-block-create-block-getresponse-form-block .lead-mail-form .form-group input[type="button"] {
+		padding: 0 1.5rem;
+	}
+}

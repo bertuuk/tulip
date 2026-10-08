@@ -37,3 +37,5 @@ if ( ! function_exists( 'tulip_enqueue_styles' ) ) :
 	}
 endif;
 add_action( 'wp_enqueue_scripts', 'tulip_enqueue_styles' );
+
+require_once get_theme_file_path( 'inc/plugin-integrations.php' );

@@ -80,6 +80,23 @@ Combinacions que **no** passen AA i que cal evitar als patrons: `primary` sobre 
 
 **No és fixa (sticky)** a propòsit: amb zoom alt o pantalles baixes una capçalera fixa tapa contingut (WCAG 1.4.10). Si un projecte la vol, es decidirà amb una condició d'alçada de pantalla.
 
+## 2026-10-08 · Integració amb Marketing Blocks
+
+**El tema no depèn del plugin.** `inc/plugin-integrations.php` només actua si el bloc `create-block/getresponse-form-block` està registrat: carrega els estils de Tulip per al formulari (`wp_enqueue_block_style`, només a les pàgines on surt) i registra dos patrons, *Hero with email form* i *Closing call to action with email form*. Sense el plugin, no apareixen i no hi ha blocs trencats.
+
+**Colors del formulari:** els posa Tulip segons la secció (clara, fosca, accent), igual que els botons. Com que el bloc escriu els seus colors com a estils en línia, els de Tulip porten `!important`; dins de Tulip els controls de color del bloc s'ignoren a propòsit.
+
+**Coses vistes al plugin (per arreglar des del seu repo, no aquí):**
+- `edit.js`: `const { uniqueId } = 'attributes'` desestructura un text, així que `uniqueId` sempre és buit i cada cop que s'obre l'editor el formulari rep un id nou (el contingut queda modificat sense tocar res).
+- Els colors de text es recalculen sols a partir del fons (`getReadableTextColor`), de manera que un valor que no sigui hex (per exemple una variable CSS) es converteix en blanc o negre.
+- El camp d'email és `type="text"`; hauria de ser `type="email"` (teclat correcte al mòbil, validació del navegador).
+- `id="start_time"` és fix: amb dos formularis a la mateixa pàgina, l'id es repeteix.
+- El checkbox real és invisible i no té indicador de focus propi; Tulip el dibuixa a la caixa visible.
+- L'etiqueta del camp trampa i els missatges per defecte estan en castellà dins del codi, no traduïbles.
+- Proposta de fons: passar els colors a les *block supports* de WordPress (color, vora, tipografia) perquè qualsevol tema els pugui definir sense `!important`.
+
+**Site Ads by Bertuuk:** connectat però sense patró. Els seus blocs (AdSense, codi d'anunci) tenen sentit dins d'entrades del blog, no en una landing; es tractaran quan es faci la plantilla d'entrada.
+
 ## Pendent
 
 - Mode "només contingut" per als ajudants (bloquejar l'estructura dels patrons).
