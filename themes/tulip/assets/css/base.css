@@ -636,6 +636,11 @@ p.is-style-badge {
 	border-radius: var(--wp--custom--radius--card);
 }
 
+.tulip-post-tags:not(:has(.wp-block-post-terms)),
+.tulip-post-footer:not(:has(.wp-block-post-terms, .tulip-author-box)) {
+	display: none;
+}
+
 .tulip-post-footer .wp-block-post-terms a {
 	margin-right: var(--wp--preset--spacing--20);
 }
@@ -763,6 +768,14 @@ p.is-style-badge {
 /* Page headers: a thin line closes a light header. */
 .tulip-page-header:not([class*="is-style-section"]) {
 	border-bottom: var(--wp--custom--border-width--default) solid color-mix(in srgb, currentColor 20%, transparent);
+}
+
+/* "See all" link next to a section heading: right-aligned beside it,
+   back to the left once the columns stack. */
+@media (max-width: 781px) {
+	.wp-block-buttons.tulip-header-link {
+		justify-content: flex-start;
+	}
 }
 
 /* Links ------------------------------------------------------------------ */

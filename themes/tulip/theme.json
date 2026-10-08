@@ -585,6 +585,13 @@
 			"postTypes": [
 				"page"
 			]
+		},
+		{
+			"name": "single-no-author",
+			"title": "Post without author",
+			"postTypes": [
+				"post"
+			]
 		}
 	],
 	"templateParts": [

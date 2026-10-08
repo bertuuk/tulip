@@ -1,7 +1,7 @@
 <?php
 /**
- * Title: Single post
- * Slug: tulip/hidden-single
+ * Title: Single post without author
+ * Slug: tulip/hidden-single-no-author
  * Inserter: no
  *
  * @package Tulip
@@ -25,9 +25,7 @@
 
 <!-- wp:post-title {"level":1,"fontSize":"xxx-large"} /-->
 
-<!-- wp:post-excerpt {"className":"tulip-standfirst","fontSize":"x-large"} /-->
-
-<!-- wp:post-author {"avatarSize":48,"className":"tulip-byline"} /--></div>
+<!-- wp:post-excerpt {"className":"tulip-standfirst","fontSize":"x-large"} /--></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
 
@@ -42,20 +40,6 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:post-terms {"term":"post_tag","separator":" "} /--></div>
-<!-- /wp:group -->
-
-<!-- wp:group {"className":"is-style-card tulip-author-box","style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
-<div class="wp-block-group is-style-card tulip-author-box"><!-- wp:avatar {"size":72,"className":"is-style-rounded"} /-->
-
-<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|10"}},"layout":{"type":"flex","orientation":"vertical"}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"className":"is-style-eyebrow"} -->
-<p class="is-style-eyebrow"><?php echo esc_html_x( 'Written by', 'author box label', 'tulip' ); ?></p>
-<!-- /wp:paragraph -->
-
-<!-- wp:post-author-name {"fontSize":"x-large","style":{"typography":{"fontWeight":"700"}}} /-->
-
-<!-- wp:post-author-biography {"textColor":"contrast-alt"} /--></div>
-<!-- /wp:group --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
 

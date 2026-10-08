@@ -24,8 +24,8 @@
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"bottom","width":"30%"} -->
-<div class="wp-block-column is-vertically-aligned-bottom" style="flex-basis:30%"><!-- wp:buttons -->
-<div class="wp-block-buttons"><!-- wp:button {"className":"is-style-text"} -->
+<div class="wp-block-column is-vertically-aligned-bottom" style="flex-basis:30%"><!-- wp:buttons {"className":"tulip-header-link","layout":{"type":"flex","justifyContent":"right"}} -->
+<div class="wp-block-buttons tulip-header-link"><!-- wp:button {"className":"is-style-text"} -->
 <div class="wp-block-button is-style-text"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( get_post_type_archive_link( 'post' ) ?: home_url( '/' ) ); ?>"><?php echo esc_html_x( 'See all articles', 'latest posts see all link', 'tulip' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
