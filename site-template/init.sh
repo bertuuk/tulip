@@ -16,7 +16,7 @@ if [ -e "$target" ] && [ -n "$(ls -A "$target" 2>/dev/null | grep -v '^\.git$' |
 	echo "$target is not empty. Stopped."; exit 1
 fi
 mkdir -p "$target"
-( cd "$here" && tar --exclude=./init.sh --exclude=./README.md -cf - . ) | ( cd "$target" && tar -xf - )
+( cd "$here" && tar --exclude=./init.sh --exclude=./README.md --exclude=./guide --exclude=./tools -cf - . ) | ( cd "$target" && tar -xf - )
 mv "$target/__CHILD__" "$target/$child"
 
 grep -rl --null '__' "$target" --exclude-dir=.git | xargs -0 sed -i.bak \

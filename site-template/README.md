@@ -27,3 +27,11 @@ What each file does:
 - `.github/workflows/deploy.yml` — on push to `main`, SSH to the server with a key that can only run the deploy (forced command). Skips quietly until the `DEPLOY_SSH_KEY` secret exists.
 - `scripts/pull.sh` (`npm run pull`) — copies the live database and uploads into the local wp-env. Server → local only.
 - `.wp-env.json` — local site with Tulip from `../../Tuk DS/tulip/themes/tulip` and the child theme; `.wp-env.override.json` (not committed) adds local plugin folders.
+
+The `tulip-new-site` skill's detailed guide lives next to the template, so it is versioned with it:
+
+- `guide/` — one file per phase: `server.md`, `repo-and-deploy.md`, `brand.md`, `pages.md`, `maintenance.md` (Catalan).
+- `tools/contrast.py` — contrast of the 14 colour pairs Tulip uses, for a child `theme.json`.
+- `tools/child-screenshot.mjs` — `screenshot.png` for a child theme, in its own colours, fonts and radii.
+
+`init.sh` doesn't copy `guide/` or `tools/` into the new site.
