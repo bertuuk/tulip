@@ -1,0 +1,51 @@
+name: Release
+
+# Push a tag vX.Y.Z → checks the version everywhere, zips themes/tulip as
+# tulip.zip (root folder tulip/) and publishes it as the latest GitHub Release.
+on:
+  push:
+    tags: ["v*.*.*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check versions match the tag
+        run: |
+          tag="${GITHUB_REF_NAME#v}"
+          style=$(sed -n 's/^Version:[[:space:]]*//p' themes/tulip/style.css | tr -d '\r')
+          stable=$(sed -n 's/^Stable tag:[[:space:]]*//p' themes/tulip/readme.txt | tr -d '\r')
+          pkg=$(node -p "require('./package.json').version")
+          echo "tag=$tag style.css=$style readme.txt=$stable package.json=$pkg"
+          [ "$style" = "$tag" ] && [ "$stable" = "$tag" ] && [ "$pkg" = "$tag" ] || { echo "::error::Versions do not match the tag $GITHUB_REF_NAME"; exit 1; }
+          grep -q "^= $tag =" themes/tulip/readme.txt || { echo "::error::No changelog entry for $tag in readme.txt"; exit 1; }
+
+      - name: Build tulip.zip
+        run: |
+          mkdir -p dist
+          cd themes
+          zip -qr ../dist/tulip.zip tulip -x '*.DS_Store' '*/.git*' '*.map'
+          cd ..
+          unzip -Z1 dist/tulip.zip | grep -v '^tulip/' && { echo "::error::Files outside tulip/"; exit 1; } || true
+          unzip -Z1 dist/tulip.zip | grep -q '^tulip/style.css$' || { echo "::error::style.css missing"; exit 1; }
+          ls -l dist/tulip.zip
+
+      - name: Release notes from the changelog
+        run: |
+          tag="${GITHUB_REF_NAME#v}"
+          awk -v v="= $tag =" '$0==v{f=1;next} /^= /{f=0} f' themes/tulip/readme.txt > dist/notes.md
+          cat dist/notes.md
+
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" dist/tulip.zip \
+            --title "Tulip ${GITHUB_REF_NAME#v}" \
+            --notes-file dist/notes.md \
+            --latest

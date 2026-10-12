@@ -78,3 +78,11 @@ endif;
 add_filter( 'render_block_core/paragraph', 'tulip_mark_all_posts_link', 10, 2 );
 
 require_once get_theme_file_path( 'inc/plugin-integrations.php' );
+
+/*
+ * Updates from GitHub Releases (left out of the WordPress.org build).
+ */
+if ( file_exists( get_template_directory() . '/inc/class-tulip-updater.php' ) ) {
+	require_once get_template_directory() . '/inc/class-tulip-updater.php';
+	new Tulip_GitHub_Updater( 'tulip', 'bertuuk/tulip' );
+}

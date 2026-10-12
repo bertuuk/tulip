@@ -4,7 +4,7 @@ A WordPress block theme for product and marketing websites, built on the design 
 
 Tulip is made for the people who edit the site after it ships. The editor only offers colours, sizes and spacing that belong to the design, every colour pairing is contrast-checked, and whole sections can be restyled in one click. Editors change words and images without breaking the layout or the accessibility of the page.
 
-- **Version:** 1.0.0
+- **Version:** 1.1.0
 - **Requires:** WordPress 6.6 or later (tested up to 7.1), PHP 7.4 or later
 - **Accessibility target:** WCAG 2.2 AA
 - **License:** GPLv2 or later
@@ -57,7 +57,14 @@ The environment runs with `WP_DEVELOPMENT_MODE=theme`, so changes to `theme.json
 
 ### Installing the theme on a real site
 
-Zip the `themes/tulip/` folder and upload it from **Appearance → Themes → Add New Theme → Upload Theme**. Only that folder is the theme; the rest of the repository is tooling.
+Download `tulip.zip` from the [latest release](https://github.com/bertuuk/tulip/releases/latest) and upload it from **Appearance → Themes → Add New Theme → Upload Theme**, or with WP-CLI:
+
+```bash
+wp theme install https://github.com/bertuuk/tulip/releases/latest/download/tulip.zip
+wp theme auto-updates enable tulip
+```
+
+After that, new versions show up in **Dashboard → Updates** like any other theme (see [Releases and updates](#releases-and-updates)).
 
 ---
 
@@ -290,6 +297,16 @@ tulip/
         ├── fonts/           Inter
         └── images/          placeholders
 ```
+
+### Releases and updates
+
+1. Bump the version in `themes/tulip/style.css` (`Version`), `themes/tulip/readme.txt` (`Stable tag` and a changelog entry `= X.Y.Z =`) and `package.json`.
+2. Commit, then tag and push: `git tag -a vX.Y.Z -m "Tulip X.Y.Z" && git push origin vX.Y.Z`.
+3. The **Release** workflow checks the versions, builds `tulip.zip` (root folder `tulip/`) and publishes it as the latest GitHub Release, with the changelog entry as notes. If a version doesn't match, it fails and publishes nothing.
+
+Sites pick it up on their own: `Update URI: https://github.com/bertuuk/tulip` in `style.css` keeps WordPress from looking for "tulip" on WordPress.org, and `inc/class-tulip-updater.php` answers the core update check (`update_themes_github.com`, WordPress 6.1+) with the latest release. Results are cached for 12 hours (1 hour after an error); **Check again** in Dashboard → Updates skips the cache.
+
+For WordPress.org the theme must not ship its own updater: that build will leave out `inc/class-tulip-updater.php` and the `Update URI` header.
 
 ### Conventions
 

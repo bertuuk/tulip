@@ -145,3 +145,13 @@ Combinacions que **no** passen AA i que cal evitar als patrons: `primary` sobre 
 - Variacions d'estil globals (`styles/*.json`) per a marques de projecte: el mecanisme equivalent a `data-theme`.
 - Captura `screenshot.png` (1200×900) per al directori.
 - Traducció al català (`languages/`).
+
+## 2026-10-12 · Versions i actualitzacions
+
+**Releases a GitHub.** Cada etiqueta `vX.Y.Z` publica `tulip.zip` (carpeta arrel `tulip/`) com a última Release, amb una GitHub Action que abans comprova que `style.css`, `readme.txt` i `package.json` diuen la mateixa versió i que hi ha entrada de changelog.
+
+**Actualitzador natiu.** `Update URI: https://github.com/bertuuk/tulip` + filtre `update_themes_github.com` (WordPress 6.1+) a `inc/class-tulip-updater.php`, sense codi de tercers. Les webs veuen les versions noves a Tauler → Actualitzacions i poden tenir les actualitzacions automàtiques activades. Memòria cau de 12 h (1 h si hi ha error); qualsevol problema amb GitHub vol dir "cap avís", mai un avís trencat. Provat en un WordPress 7.1.3: avís, actualització real des d'un zip (mateixa carpeta, tema fill actiu) i casos sense adjunt o amb error de l'API.
+
+**Webs amb desplegament.** `TULIP_REF="latest"` instal·la l'última Release si cal i deixa les actualitzacions a WordPress; `TULIP_REF="vX.Y.Z"` fixa la versió i les desactiva. Mateix model que els plugins propis.
+
+**WordPress.org.** El directori no accepta temes amb actualitzador propi: la versió per al directori haurà de sortir sense `inc/class-tulip-updater.php` ni la capçalera `Update URI`.
