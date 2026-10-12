@@ -3,7 +3,7 @@ Contributors: bertanicolau
 Requires at least: 6.6
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -18,6 +18,9 @@ Section styles (Alternative, Brand subtle, Brand dark, Accent) recolour a whole 
 Templates for the blog (index, archives, single post) and patterns for product pages: hero with image, highlight strip, heading and text, text and image, numbered features, video with call to action, pricing, FAQ (accordion), closing call to action, dark header and footer, and a full landing page that combines them.
 
 == Changelog ==
+
+= 1.0.1 =
+* Marketing Blocks integration: email field styles also apply to `type="email"` inputs.
 
 = 1.0.0 =
 * First stable version.
