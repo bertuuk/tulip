@@ -3,7 +3,7 @@ Contributors: bertanicolau
 Requires at least: 6.6
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.2.0
+Stable tag: 1.2.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -18,6 +18,9 @@ Section styles (Alternative, Brand subtle, Brand dark, Accent) recolour a whole 
 Templates for the blog (index, archives, single post) and patterns for product pages: hero with image, highlight strip, heading and text, text and image, numbered features, video with call to action, pricing, FAQ (accordion), closing call to action, dark header and footer, and a full landing page that combines them.
 
 == Changelog ==
+
+= 1.2.1 =
+* New theme screenshot with an original tulip illustration.
 
 = 1.2.0 =
 * Automatic updates stay within the same major version: 1.x → 2.0 is offered in Dashboard → Updates but waits for a click.
@@ -68,4 +71,4 @@ Inter, Copyright 2016 The Inter Project Authors (https://github.com/rsms/inter)
 License: SIL Open Font License, Version 1.1
 Source: https://rsms.me/inter/
 
-Screenshot (screenshot.png): rendered from Tulip's own patterns, (C) 2026 Berta Nicolau, GPLv2 or later.
+Screenshot (screenshot.png): rendered from Tulip's own patterns; tulip illustration (source: docs/screenshot-illustration.svg) (C) 2026 Berta Nicolau, GPLv2 or later.

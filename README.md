@@ -4,7 +4,7 @@ A WordPress block theme for product and marketing websites, built on the design 
 
 Tulip is made for the people who edit the site after it ships. The editor only offers colours, sizes and spacing that belong to the design, every colour pairing is contrast-checked, and whole sections can be restyled in one click. Editors change words and images without breaking the layout or the accessibility of the page.
 
-- **Version:** 1.2.0
+- **Version:** 1.2.1
 - **Requires:** WordPress 6.6 or later (tested up to 7.1), PHP 7.4 or later
 - **Accessibility target:** WCAG 2.2 AA
 - **License:** GPLv2 or later
