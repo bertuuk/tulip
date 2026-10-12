@@ -1,0 +1,36 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      SSH_HOST: sv102.ifastnet.com
+      SSH_PORT: "1394"
+      SSH_USER: maindoma
+      SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+      # Server host key (public), pinned so the Action only talks to our server.
+      KNOWN_HOST: "[sv102.ifastnet.com]:1394 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBw89q2K2SKtHH0dALk7kpjTqgEcRrBGJx0zIun8JbY8"
+    steps:
+      - name: Deploy over SSH
+        run: |
+          if [ -z "$SSH_KEY" ]; then
+            echo "DEPLOY_SSH_KEY secret not set yet: skipping deploy."
+            exit 0
+          fi
+          mkdir -p ~/.ssh
+          printf '%s\n' "$SSH_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          printf '%s\n' "$KNOWN_HOST" > ~/.ssh/known_hosts
+          # The key is restricted on the server to a forced command that runs
+          # deploy/deploy.sh, so no remote command is needed here.
+          ssh -i ~/.ssh/deploy_key -p "$SSH_PORT" -o BatchMode=yes -o StrictHostKeyChecking=yes \
+            "$SSH_USER@$SSH_HOST"
