@@ -62,6 +62,29 @@ if ( ! class_exists( 'Tulip_GitHub_Updater' ) ) :
 			$this->cache_key = 'tulip_github_release_' . md5( $repo );
 
 			add_filter( 'update_themes_github.com', array( $this, 'check' ), 10, 3 );
+			add_filter( 'auto_update_theme', array( $this, 'hold_major' ), 20, 2 );
+		}
+
+		/**
+		 * Automatic updates only within the same major version.
+		 *
+		 * 1.1.0 → 1.2.0 installs on its own; 1.x → 2.0.0 is offered in
+		 * Dashboard → Updates but waits for someone to click. A major version
+		 * is where breaking changes go, so a person should be there.
+		 *
+		 * @param bool|null $update Whether to auto-update.
+		 * @param object    $item   Update offer (theme, new_version...).
+		 * @return bool|null
+		 */
+		public function hold_major( $update, $item ) {
+			if ( ! is_object( $item ) || ! isset( $item->theme, $item->new_version ) || $item->theme !== $this->slug ) {
+				return $update;
+			}
+			$installed = wp_get_theme( $this->slug )->get( 'Version' );
+			if ( (int) $installed !== (int) $item->new_version ) {
+				return false;
+			}
+			return $update;
 		}
 
 		/**
