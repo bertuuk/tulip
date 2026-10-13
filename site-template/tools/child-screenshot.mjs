@@ -48,6 +48,44 @@ for (const fam of Object.values(families)) {
 	}
 }
 const stack = (slug, fallback) => families[slug]?.fontFamily || fallback;
+
+// Weights: Tulip's defaults (theme.json styles), then the child's own styles.
+// Each weight is snapped to what the family's font files actually contain, so a
+// font shipped only at 400/600 is not drawn with a fake bold.
+const tulipWeights = { body: '400', heading: '600', h1: '700', h2: '700', button: '600' };
+const el = theme.styles?.elements || {};
+const w = {
+	body: theme.styles?.typography?.fontWeight || tulipWeights.body,
+	heading: el.heading?.typography?.fontWeight || tulipWeights.heading,
+	button: el.button?.typography?.fontWeight || tulipWeights.button,
+};
+w.h1 = el.h1?.typography?.fontWeight || (el.heading?.typography?.fontWeight ? w.heading : tulipWeights.h1);
+w.h2 = el.h2?.typography?.fontWeight || (el.heading?.typography?.fontWeight ? w.heading : tulipWeights.h2);
+const ranges = (slug) =>
+	(families[slug]?.fontFace || [])
+		.filter((f) => (f.fontStyle || 'normal') === 'normal')
+		.map((f) => String(f.fontWeight || '400').trim().split(/\s+/).map(Number))
+		.map(([a, b]) => [a, b ?? a]);
+const snap = (slug, weight) => {
+	const want = Number(weight);
+	const r = ranges(slug);
+	if (!r.length || Number.isNaN(want)) return String(weight); // system font: leave it to the browser
+	let best = null;
+	for (const [a, b] of r) {
+		const v = Math.min(Math.max(want, a), b);
+		if (best === null || Math.abs(v - want) < Math.abs(best - want)) best = v;
+	}
+	return String(best);
+};
+// Headings use the secondary family if it has its own files, otherwise the primary ones.
+const headSlug = families.secondary?.fontFace?.length ? 'secondary' : 'primary';
+const fw = {
+	body: snap('primary', w.body),
+	button: snap('primary', w.button),
+	logo: snap(headSlug, w.heading),
+	h1: snap(headSlug, w.h1),
+	h2: snap(headSlug, w.h2),
+};
 const body = stack('primary', 'Inter, system-ui, sans-serif');
 const heading = stack('secondary', body);
 const mono = stack('mono', 'ui-monospace, SFMono-Regular, Consolas, monospace');
@@ -83,29 +121,29 @@ const html = `<!doctype html><html><head><meta charset="utf-8"><style>
 ${faces.join('\n')}
 :root{${radiusVars}}
 *{box-sizing:border-box;margin:0}
-body{width:1600px;height:1200px;overflow:hidden;background:${pal.base};color:${pal.contrast};font-family:${body};-webkit-font-smoothing:antialiased}
+body{width:1600px;height:1200px;overflow:hidden;background:${pal.base};color:${pal.contrast};font-family:${body};font-weight:${fw.body};-webkit-font-smoothing:antialiased}
 .wrap{width:1200px;margin:0 auto}
 header{height:70px;border-bottom:1px solid ${pal.border};display:flex;align-items:center}
 header .wrap{display:flex;align-items:center;justify-content:space-between}
-.logo{font-family:${heading};font-weight:700;font-size:24px}
+.logo{font-family:${heading};font-weight:${fw.logo};font-size:24px}
 nav{display:flex;gap:28px;align-items:center;font-size:17px}
-.btn{display:inline-block;padding:14px 24px;font-weight:600;font-size:17px;border-radius:var(--wp--custom--radius--button);background:${pal.primary};color:${pal.base}}
+.btn{display:inline-block;padding:14px 24px;font-weight:${fw.button};font-size:17px;border-radius:var(--wp--custom--radius--button);background:${pal.primary};color:${pal.base}}
 header .btn{padding:10px 18px;font-size:16px}
 .hero{background:${pal['brand-strong']};color:${pal.base};height:736px;display:flex;align-items:center}
 .hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
 .eyebrow{font-family:${mono};text-transform:uppercase;letter-spacing:.08em;font-size:14px;margin-bottom:24px}
-h1{font-family:${heading};font-size:88px;line-height:1.02;letter-spacing:-.02em;font-weight:700;margin-bottom:28px}
+h1{font-family:${heading};font-size:88px;line-height:1.02;letter-spacing:-.02em;font-weight:${fw.h1};margin-bottom:28px}
 .lead{font-size:22px;line-height:1.6;margin-bottom:36px;max-width:560px}
 .hero .btn{background:${pal.base};color:${pal['brand-strong']};margin-right:16px}
 .hero .btn.outline{background:transparent;color:${pal.base};box-shadow:inset 0 0 0 2px ${pal.base}}
 .art{border-radius:var(--wp--custom--radius--card);overflow:hidden;line-height:0}
 .art svg{width:100%;height:auto}
 .strip{background:${pal.accent};color:${pal['on-accent']};height:62px;display:flex;align-items:center}
-.strip .wrap{display:flex;gap:28px;align-items:center;font-weight:600;font-size:19px}
+.strip .wrap{display:flex;gap:28px;align-items:center;font-weight:${fw.button};font-size:19px}
 .strip .eyebrow{margin:0;font-weight:400}
 .next{padding-top:90px}
 .next .wrap{display:grid;grid-template-columns:1fr 1fr;gap:80px}
-h2{font-family:${heading};font-size:56px;line-height:1.08;letter-spacing:-.02em;font-weight:700}
+h2{font-family:${heading};font-size:56px;line-height:1.08;letter-spacing:-.02em;font-weight:${fw.h2}}
 .next p{font-size:19px;line-height:1.6;color:${pal['contrast-alt']}}
 </style></head><body>
 <header><div class="wrap"><div class="logo">${esc(siteName)}</div>
@@ -129,4 +167,4 @@ await page.evaluate(() => document.fonts.ready);
 await page.screenshot({ path: path.join(dir, 'screenshot.png') });
 await browser.close();
 fs.unlinkSync(tmp);
-console.log(`✓ ${path.join(dir, 'screenshot.png')} (1200×900)`);
+console.log(`✓ ${path.join(dir, 'screenshot.png')} (1200×900) · weights ${JSON.stringify(fw)}`);

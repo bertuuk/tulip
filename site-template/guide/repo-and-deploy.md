@@ -22,16 +22,24 @@ mkdir -p ~/Documents/Projectes/<Projecte> && cd ~/Documents/Projectes/<Projecte>
 
    Ha d'obrir `localhost:<port>` amb el tema fill actiu i el tauler en català (`admin` / `password`).
 
-4. Plugins propis en local: `.wp-env.override.json` (no va al git) amb les carpetes dels plugins al Mac. **La seva llista `plugins` substitueix la del `.wp-env.json`**: hi has de repetir Create Block Theme. Els plugins han de tenir `build/` (`npm run build` dins del plugin).
+4. Plugins propis en local (opcional; si no, el `deploy.sh` ja els instal·la al servidor des de les Releases): `.wp-env.override.json` (no va al git) amb les carpetes dels plugins al Mac. **La seva llista `plugins` substitueix la del `.wp-env.json`**: hi has de repetir Create Block Theme. Els plugins han de tenir `build/` (`npm run build` dins del plugin).
+
+   La ruta és la de cada Mac, no la copiïs d'una altra web: demana-la a la Berta o troba-la abans d'escriure-la. Ha de ser absoluta (sense `~`), i la carpeta ha de dir-se igual que el slug del plugin. Comprova-la al Mac:
+
+```bash
+ls "<carpeta del plugin>/build" && grep -m1 "Plugin Name" "<carpeta del plugin>"/*.php
+```
 
 ```json
 {
   "plugins": [
     "https://downloads.wordpress.org/plugin/create-block-theme.latest-stable.zip",
-    "/Users/bertanicolau/Documents/Projectes/Themes i Plugins/wordpress-dev/bertuuk-marketing-blocks"
+    "<carpeta absoluta del plugin al Mac>/bertuuk-marketing-blocks"
   ]
 }
 ```
+
+   Si la ruta no existeix, `wp-env start` falla o el plugin no surt a la llista. Després de canviar l'override, `npx wp-env start` de nou.
 
 ## 2.2 Clau perquè el servidor llegeixi el repo — al servidor
 
