@@ -155,3 +155,11 @@ Combinacions que **no** passen AA i que cal evitar als patrons: `primary` sobre 
 **Webs amb desplegament.** `TULIP_REF="latest"` instal·la l'última Release si cal i deixa les actualitzacions a WordPress; `TULIP_REF="vX.Y.Z"` fixa la versió i les desactiva. Mateix model que els plugins propis.
 
 **WordPress.org.** El directori no accepta temes amb actualitzador propi: la versió per al directori haurà de sortir sense `inc/class-tulip-updater.php` ni la capçalera `Update URI`.
+
+## 2026-10-25 · Plugin tulip-blocks
+
+**Esquelet a `plugins/tulip-blocks`**, muntat al `.wp-env.json` de l'arrel. Primer bloc previst: el carrusel de passos (prototip del Brako). Cada bloc és una carpeta a `src/` amb el seu `block.json`; el PHP registra tot el que hi ha a `build/`, sense llista a mà.
+
+**`@wordpress/scripts` 30.27**, no la 37: la 37 té conflictes de dependències opcionals (vitest/@types/node) en instal·lar. Revisar-ho quan s'estabilitzi.
+
+**`build/` no va al repo:** el compilarà el flux de publicació. Com es publica (mateixa versió que Tulip o versions pròpies) es decideix abans de la primera Release.
