@@ -2,7 +2,7 @@
   "name": "tulip",
   "version": "1.2.1",
   "private": true,
-  "description": "Development environment for the Tulip block theme and its companion plugin, Tulip Blocks.",
+  "description": "Development environment for the Tulip block theme (its companion plugin, Tulip Blocks, lives in bertuuk/tulip-blocks).",
   "license": "GPL-2.0-or-later",
   "author": "Berta Nicolau <hola@bertanicolau.com>",
   "scripts": {

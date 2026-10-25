@@ -53,6 +53,8 @@ Open http://localhost:8888 and log in at http://localhost:8888/wp-admin with `ad
 - **Create Block Theme**, to save changes made in the Site Editor back to theme files.
 - **Theme Check**, to review the theme against the WordPress.org directory requirements.
 
+It also mounts [Tulip Blocks](https://github.com/bertuuk/tulip-blocks), the theme's companion plugin, from `../tulip-blocks`. Clone it next to this repository first (`git clone https://github.com/bertuuk/tulip-blocks ../tulip-blocks`), or wp-env will not start. Its blocks load only once they are built (`npm install && npm start` in that folder).
+
 The environment runs with `WP_DEVELOPMENT_MODE=theme`, so changes to `theme.json`, patterns and templates show up on reload without clearing caches.
 
 ### Installing the theme on a real site
@@ -263,6 +265,7 @@ Its `plugins` list **replaces** the one in `.wp-env.json`, so repeat the helper 
   "plugins": [
     "https://downloads.wordpress.org/plugin/create-block-theme.latest-stable.zip",
     "https://downloads.wordpress.org/plugin/theme-check.latest-stable.zip",
+    "../tulip-blocks",
     "/absolute/path/to/your-plugin"
   ]
 }

@@ -158,8 +158,10 @@ Combinacions que **no** passen AA i que cal evitar als patrons: `primary` sobre 
 
 ## 2026-10-25 · Plugin tulip-blocks
 
-**Esquelet a `plugins/tulip-blocks`**, muntat al `.wp-env.json` de l'arrel. Primer bloc previst: el carrusel de passos (prototip del Brako). Cada bloc és una carpeta a `src/` amb el seu `block.json`; el PHP registra tot el que hi ha a `build/`, sense llista a mà.
+**Repo propi, `bertuuk/tulip-blocks`, amb versions pròpies.** Canvia el "un sol repo" del 2026-10-08. Com fa WordPress, tema i plugin són productes separats, cadascun amb la seva versió i el seu changelog: un arreglament d'un bloc no ha de fer actualitzar el tema a totes les webs. A més, GitHub només marca una Release "latest" per repo, i el `deploy.sh` i els actualitzadors la fan servir. Funciona igual que Marketing Blocks: Release amb `tulip-blocks.zip`, actualitzador propi (només dins de la mateixa major) i `GITHUB_PLUGINS="tulip-blocks/tulip-blocks"` a cada web.
+
+**Es desenvolupen junts igualment:** les carpetes `tulip` i `tulip-blocks` són germanes (`~/Documents/Projectes/Tuk DS/`) i el `.wp-env.json` de Tulip munta `../tulip-blocks`.
 
 **`@wordpress/scripts` 30.27**, no la 37: la 37 té conflictes de dependències opcionals (vitest/@types/node) en instal·lar. Revisar-ho quan s'estabilitzi.
 
-**`build/` no va al repo:** el compilarà el flux de publicació. Com es publica (mateixa versió que Tulip o versions pròpies) es decideix abans de la primera Release.
+Primer bloc previst: el carrusel de passos (prototip del Brako).
